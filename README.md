@@ -1,7 +1,7 @@
 # Plan 
 
-- [ ] v1.0.1 - Initial deployment 
-- [ ] v1.0.2 - fixes to initial deployment
+- [ ] v1.0.1 - Initial Vercel deployment 
+- [ ] v1.0.2 - fixes to initial deployment - fix NavBar linking
 - [ ] v1.0.3 - initialise final chosen react library and usage of chosen components 
   - nav bar / menu 
   - services page tabs or accordian 
@@ -10,7 +10,7 @@
   - theme and layout 
 - [ ] v1.1.0 - First deployment with celaned up code, react library and remove unused dependencies  
 - [ ] v1.1.1 - Transfer to typsecript 
-- [ ] v1.2 - Over all site theme / styling 
+- [ ] v1.2 - Over-all site theme / styling 
 - [ ] v1.3 - Individual page stylings 
 - [ ] v1.4 - Icons and Images 
 - [ ] v1.5 - Content 
