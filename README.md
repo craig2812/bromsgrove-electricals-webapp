@@ -1,22 +1,22 @@
 # Plan 
 
-- [] v1.0.1 - Initial deployment 
-- [] v1.0.2 - fixes to initial deployment
-- [] v1.0.3 - initialise final chosen react library and usage of chosen components 
+- [ ] v1.0.1 - Initial deployment 
+- [ ] v1.0.2 - fixes to initial deployment
+- [ ] v1.0.3 - initialise final chosen react library and usage of chosen components 
   - nav bar / menu 
   - services page tabs or accordian 
   - buttons and contact us form 
   - icon library 
   - theme and layout 
-- [] v1.1.0 - First deployment with celaned up code, react library and remove unused dependencies  
-- [] v1.1.1 - Transfer to typsecript 
-- [] v1.2 - Over all site theme / styling 
-- [] v1.3 - Individual page stylings 
-- [] v1.4 - Icons and Images 
-- [] v1.5 - Content 
-- [] v1.6 - Enable contact form and database connections 
-- [] v1.7 - admin site for updates and changes 
-- [] v2.0-  First delpoyment and Final MVP
+- [ ] v1.1.0 - First deployment with celaned up code, react library and remove unused dependencies  
+- [ ] v1.1.1 - Transfer to typsecript 
+- [ ] v1.2 - Over all site theme / styling 
+- [ ] v1.3 - Individual page stylings 
+- [ ] v1.4 - Icons and Images 
+- [ ] v1.5 - Content 
+- [ ] v1.6 - Enable contact form and database connections 
+- [ ] v1.7 - admin site for updates and changes 
+- [ ] v2.0-  First delpoyment and Final MVP
 
 ## NOTES 
 - react library based navbar that is horizontally styled 
@@ -44,17 +44,17 @@ _Live Example: https://create-react-template.vercel.app/_
 
 In the project directory, you can run:
 
-- [] `npm start`
+- [ ] `npm start`
 
 Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes. You may also see any lint errors in the console.
 
-- [] `npm test`
+- [ ] `npm test`
 
 Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- [] `npm run build`
+- [ ] `npm run build`
 
 Builds the app for production to the `build` folder.
 
