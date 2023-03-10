@@ -26,7 +26,7 @@ export const NavBar = () => {
                 </Typography>
                 <Stack direction={'row'} spacing={2}>
                     {pages.map((page) => (
-                        <Button color={'inherit'} href={`/${page}`}>{page}</Button>
+                        <Button key={page} color={'inherit'} href={`/${page}`}>{page}</Button>
                     ))}
                     <Button onClick={handleClick} color={'inherit'} id={'service-button'}
                             endIcon={<KeyboardArrowDownIcon/>}>Services</Button>

@@ -1,10 +1,17 @@
 name: CI
 on: [ push ]
+
 jobs:
   eslint:
     name: Lint code base
     runs-on: ubuntu-latest
-    
+    test:
+      name: Test
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: Run tests
+          run: …
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -14,6 +21,16 @@ jobs:
       - name: run ESlint
         run: npm run lint
 
-      - name: Deploy to Vercel
-        run: vercel
-      
+        
+        
+  deployment:
+    - name: Deploy to Vercel - Staging
+      run: vercel
+        
+  push:
+    branches:
+      - master
+    
+    steps:
+      - name: Deploy to Vercel Production
+        run: vercel --prod 
