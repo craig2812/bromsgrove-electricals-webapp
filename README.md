@@ -2,6 +2,8 @@
 
 - [x] v1.0.1 - Initial Vercel deployment - https://bromsgrove-electricals-webapp.vercel.app
 - [x] v1.0.2 - fixes to initial deployment - fix NavBar linking
+- [x] v1.0.2b - Added CI via vercel for both staging and production environemnts 
+  - any pushes to main branch will automatically push to vercel productiomn site, so have added tsrict rule on merging from feature branches. 
 - [ ] v1.0.3 - initialise final chosen react library and usage of chosen components 
   ~~- nav bar / menu~~ 
   - services page tabs or accordian 
