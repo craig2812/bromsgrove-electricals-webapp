@@ -7,7 +7,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkoutv2
+        uses: actions/checkoutev2
 
       - name: Install packages
         run: npm i
