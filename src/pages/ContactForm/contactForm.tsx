@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from "../../components/NavBar/navbar";
+import {NavBar} from "../../components/NavBar/navbar";
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function ContactForm() {
 
     return (
         <>
-            <Navbar/>
+            <NavBar/>
         <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name:</label>
             <input

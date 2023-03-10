@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Navbar from '../../components/NavBar/navbar';
+import {NavBar} from '../../components/NavBar/navbar';
 import styles from './services.module.css';
 
 const Services = () => {
     return (
         <div>
-            <Navbar/>
+            <NavBar/>
 
             Accordian or tabs here 
             

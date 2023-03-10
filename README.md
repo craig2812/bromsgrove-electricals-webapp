@@ -1,9 +1,9 @@
 # Plan 
 
 - [x] v1.0.1 - Initial Vercel deployment - https://bromsgrove-electricals-webapp.vercel.app
-- [ ] v1.0.2 - fixes to initial deployment - fix NavBar linking
+- [x] v1.0.2 - fixes to initial deployment - fix NavBar linking
 - [ ] v1.0.3 - initialise final chosen react library and usage of chosen components 
-  - nav bar / menu 
+  ~~- nav bar / menu~~ 
   - services page tabs or accordian 
   - buttons and contact us form 
   - icon library 
