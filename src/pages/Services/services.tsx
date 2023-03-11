@@ -6,9 +6,8 @@ const Services = () => {
     return (
         <div>
             <NavBar/>
-
-            Accordian or tabs here 
-            
+<h1>All Services:</h1>
+Our electrical business provides a wide range of electrical services to meet all your needs. Whether you need a small repair or a large-scale installation, our team is dedicated to providing quality service and exceptional results. Contact us today to learn more about our services and how we can help you.            
         </div>
     );
 };
