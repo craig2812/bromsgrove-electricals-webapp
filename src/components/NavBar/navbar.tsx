@@ -1,4 +1,4 @@
-import {AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem} from '@mui/material'
+import {AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem, Link} from '@mui/material'
 import MyIcon from '@mui/icons-material/ElectricMeter'
 import App from "../../App";
 import React, {useState} from "react";
@@ -7,7 +7,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 export const NavBar = () => {
 
     const pages = ['About', 'Contact'];
-    const services = []
+    const services = ['Domestic Electrical Work', 'Commerical Electrical Work', 'Electrical Testing', 'Electric Vehicle Charging Points', 'All Services']
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl)
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => setAnchorEl(event.currentTarget)
@@ -37,9 +37,11 @@ export const NavBar = () => {
                       }}
                       anchorOrigin={{vertical: "bottom", horizontal: 'right'}}
                       transformOrigin={{vertical: 'top', horizontal: 'right'}}>
-                    <MenuItem onClick={handleClose}>
-                        Domestic Electrical Work
-                    </MenuItem>
+                              <MenuItem onClick={handleClose} component={Link} href="/domestic">Domestic Electrical Work</MenuItem>
+                              <MenuItem onClick={handleClose} component={Link} href="/commercial">Commerical Electrical Work</MenuItem>
+                              <MenuItem onClick={handleClose} component={Link} href="/testing">Electrical Testing</MenuItem>
+                              <MenuItem divider onClick={handleClose} component={Link} href="/charging">Electric Vehicle Charging Points</MenuItem>
+                              <MenuItem onClick={handleClose} component={Link} href="/services">All Services</MenuItem>
                 </Menu>
             </Toolbar>
         </AppBar>
