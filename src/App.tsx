@@ -1,16 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {NavBar} from "../src/components/NavBar/navbar"
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home/home';
 import AboutUs from './pages/AboutUs/about';
 import Services from './pages/Services/services';
-import ContactForm from './pages/ContactForm/contactForm';
 import Testing from './pages/Services/testing';
 import Commercial from './pages/Services/commerical';
 import Domestic from './pages/Services/domestic';
 import Charging from './pages/Services/charging';
+import Contact from "./pages/Contact/contact";
 
 function App() {
   return (
@@ -24,7 +23,7 @@ function App() {
                 <Route path="/domestic" element={<Domestic/>}/>
                 <Route path="/charging" element={<Charging/>}/>
                 <Route path="/about" element={<AboutUs/>}/>
-                <Route path="/contact" element={<ContactForm/>}/>
+                <Route path="/contact" element={<Contact/>}/>
             </Routes>
         </BrowserRouter>
    
