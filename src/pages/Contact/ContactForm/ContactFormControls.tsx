@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-const PostContactForm = async (
-    values: any,
-    successCallback: any,
-    errorCallback: any
-) => {
-console.log('This seems to be working great')    // do stuff
-    // if successful
-    if (true) successCallback();
-    else errorCallback();
-};
+// const PostContactForm = async (
+//     values: any,
+//     successCallback: any,
+//     errorCallback: any
+// ) => {
+// console.log('This seems to be working great')    // do stuff
+//     // if successful
+//     if (true) successCallback();
+//     else errorCallback();
+// };
 
 const initialFormValues = {
     fullName: "",
@@ -85,9 +85,9 @@ export const useFormControls = () => {
         e.preventDefault();
         const isValid =
             Object.values(errors).every((x) => x === "") && formIsValid();
-        if (isValid) {
-            await PostContactForm(values, handleSuccess, handleError);
-        }
+        // if (isValid) {
+        //     await PostContactForm(values, handleSuccess, handleError);
+        // }
     };
 
     return {
