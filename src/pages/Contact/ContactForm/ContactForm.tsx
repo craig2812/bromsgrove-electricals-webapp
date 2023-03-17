@@ -57,6 +57,7 @@ export const ContactForm = () => {
                 type="submit"
                 color="secondary"
                 disabled={!formIsValid()}
+                onClick={handleFormSubmit}
             >
                 Send Message
             </Button>

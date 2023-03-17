@@ -5,7 +5,7 @@ import { useState } from "react";
 //     successCallback: any,
 //     errorCallback: any
 // ) => {
-//     // do stuff
+// console.log('This seems to be working great')    // do stuff
 //     // if successful
 //     if (true) successCallback();
 //     else errorCallback();
