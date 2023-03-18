@@ -1,13 +1,11 @@
 import {AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem, Link} from '@mui/material'
 import MyIcon from '@mui/icons-material/ElectricMeter'
-import App from "../../App";
 import React, {useState} from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 export const NavBar = () => {
 
     const pages = ['About', 'Contact'];
-    const services = ['Domestic Electrical Work', 'Commerical Electrical Work', 'Electrical Testing', 'Electric Vehicle Charging Points', 'All Services']
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl)
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => setAnchorEl(event.currentTarget)

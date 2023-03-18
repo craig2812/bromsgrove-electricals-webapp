@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home/home';
@@ -11,7 +10,19 @@ import Domestic from './pages/Services/domestic';
 import Charging from './pages/Services/charging';
 import Contact from "./pages/Contact/contact";
 
+
 function App() {
+
+const [backEndData, setBackEndData] = useState([{}])
+
+useEffect(()=>{
+  fetch("/content").then(
+    response => response.json()).then(
+      data => {
+        setBackEndData(data)}
+    )
+      }, [])
+console.log('data', backEndData)
   return (
 <BrowserRouter>
             
