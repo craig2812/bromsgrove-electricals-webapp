@@ -13,16 +13,6 @@ import Contact from "./pages/Contact/contact";
 
 function App() {
 
-const [backEndData, setBackEndData] = useState([{}])
-
-useEffect(()=>{
-  fetch("/content").then(
-    response => response.json()).then(
-      data => {
-        setBackEndData(data)}
-    )
-      }, [])
-console.log('data', backEndData)
   return (
 <BrowserRouter>
             

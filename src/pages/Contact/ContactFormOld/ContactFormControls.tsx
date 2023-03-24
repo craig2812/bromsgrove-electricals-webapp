@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState } from "react"
+import * as fs from 'fs'
 
-// const PostContactForm = async (
-//     values: any,
-//     successCallback: any,
-//     errorCallback: any
-// ) => {
-// console.log('This seems to be working great')    // do stuff
-//     // if successful
-//     if (true) successCallback();
-//     else errorCallback();
-// };
+const PostContactForm = async (
+    values: any,
+    successCallback: any,
+    errorCallback: any
+) => {
+console.log('This seems to be working great')    // do stuff
+
+    // if successful it calls handleSuccess which will write new contact us form 
+    if (successCallback) successCallback();
+    else errorCallback();
+};
 
 const initialFormValues = {
     fullName: "",
@@ -60,7 +62,7 @@ export const useFormControls = () => {
             ...initialFormValues,
             formSubmitted: true,
             success: true
-        });
+        })
     };
 
     const handleError = () => {
@@ -85,9 +87,12 @@ export const useFormControls = () => {
         e.preventDefault();
         const isValid =
             Object.values(errors).every((x) => x === "") && formIsValid();
-        // if (isValid) {
-        //     await PostContactForm(values, handleSuccess, handleError);
-        // }
+        if (isValid) {
+            await PostContactForm(values, handleSuccess, handleError);
+            console.log('values', values)
+            console.log('values', JSON.stringify(values))
+
+        }
     };
 
     return {
