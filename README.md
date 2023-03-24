@@ -6,9 +6,9 @@
   - any pushes to main branch will automatically push to vercel productiomn site, so have added tsrict rule on merging from feature branches. 
 - [x] v1.1 - initialise final chosen react library and implement components 
   ~~- nav bar / menu~~ 
- - v1.1.1 - services page tabs or accordian 
- - v1.1.2 - buttons and contact us form 
- - v1.1.3 - icon library and usages
+    - [x] v1.1.1 - Contact us form 
+    - [x] v1.1.2 - Services Pages
+    - [ ] v1.1.3 - Icon library and usages
 - [ ] v1.2 - Over-all site theme / styling 
 - [ ] v1.3 - Individual page stylings and reactive styling for mobile 
 - [ ] v1.4 - Finalise Icons and add Images with image gallery
