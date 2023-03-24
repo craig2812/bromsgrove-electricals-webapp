@@ -4,7 +4,7 @@
 - [x] v1.0.2 - fixes to initial deployment - fix NavBar linking
 - [x] v1.0.2b - Added CI via vercel for both staging and production environemnts 
   - any pushes to main branch will automatically push to vercel productiomn site, so have added tsrict rule on merging from feature branches. 
-- [ ] v1.1 - initialise final chosen react library and implement components 
+- [x] v1.1 - initialise final chosen react library and implement components 
   ~~- nav bar / menu~~ 
  - v1.1.1 - services page tabs or accordian 
  - v1.1.2 - buttons and contact us form 
@@ -18,6 +18,8 @@
 
 ### First delpoyment and Final MVP
 - [ ] v1.6 - Enable contact form and database connections 
+ - this is already partially done wuth backend loacted here https://github.com/craig2812/WebAppBackEnd
+ - this requires hosting externally however
 
 ### Stretch Goals 
 - [ ] v2.0 - admin site for updates and changes 
