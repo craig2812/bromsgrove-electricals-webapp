@@ -8,9 +8,13 @@
   ~~- nav bar / menu~~ 
     - [x] v1.1.1 - Contact us form 
     - [x] v1.1.2 - Services Pages
-    - [ ] v1.1.3 - Icon library and usages
+    - [x] v1.1.3 - Icon library and usages
 - [ ] v1.2 - Over-all site theme / styling 
-- [ ] v1.3 - Individual page stylings and reactive styling for mobile 
+  - Initial Styling 
+  - App Wide Theme Improvement
+  - Improve code to to enable theme wide css changes with ease
+- [ ] v1.3 - Individual page stylings and reactive styling for mobile
+  - maybe have all service pages from one component
 - [ ] v1.4 - Finalise Icons and add Images with image gallery
 - [ ] v1.5 - Copy and content 
  - v1.5.1 - Lanuguage Packs 
