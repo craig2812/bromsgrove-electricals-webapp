@@ -14,7 +14,7 @@ export const NavBar = () => {
     }
 
     return (
-        <AppBar position='static'>
+        <AppBar position='static' style={{  backgroundColor: '#F5DDAB', color: '#003F56'}}>
             <Toolbar>
                 <IconButton size='large' edge='start' color='inherit' aria-label='logo' href={'/'}>
                     <MyIcon/>

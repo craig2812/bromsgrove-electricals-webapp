@@ -1,5 +1,6 @@
 import  React,{ useState } from 'react';
 import fs from 'fs'
+import './contactForm.css'
 
 import {Grid, TextField, Button, withStyles, Typography, CssBaseline} from "@mui/material";
 import PropTypes from "prop-types";
@@ -63,7 +64,7 @@ export const ContactForm = () => {
 
 
         return (
-            <div className={''}>
+            <div className={'container'}>
             <CssBaseline />
                 <Typography variant="h4" align="center" component="h1" gutterBottom>
                     {'Contact Form'.toUpperCase()}
@@ -113,10 +114,9 @@ export const ContactForm = () => {
                                 // rowsMax="4"
                                 />
                             </Grid>
-                            <Grid container direction="row" spacing={2} style={{ marginTop: 20 }}>
+                            <Grid container direction="row" spacing={2} style={{ marginTop: 20 }}  className={'buttons'}>
                             <Grid item >
                                 <Button
-                                // className={classes.formButton}
                                 type="reset"
                                 variant="contained"
                                 color="secondary"
@@ -124,20 +124,9 @@ export const ContactForm = () => {
                                 >
                                 RESET
                                 </Button>
-                                <Button
-                                // className={classes.formButton}
-                                type="button"
-                                variant="contained"
-                                color="secondary"
-                                //disabled={submitting || pristine}
-                                onClick={() => console.log('values', JSON.stringify(values))}
-                                >
-                                test
-                                </Button>
                             </Grid>
                             <Grid item >  
                                 <Button
-                                // className={classes.formButton}
                                 type="submit"
                                 variant="contained"
                                 color="primary"
