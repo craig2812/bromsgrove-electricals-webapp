@@ -9,6 +9,10 @@
     - [x] v1.1.1 - Contact us form 
     - [x] v1.1.2 - Services Pages
     - [x] v1.1.3 - Icon library and usages
+    
+--- Mid point pivot - going to remove the backend as it seems overjkill instead opting for a SendGrid email client within the contact form and frontEnd to be managed locally and pushed and hosted on free service with Vercel --- 
+
+
 - [ ] v1.2 - Over-all site theme / styling 
   - Initial Styling 
   - App Wide Theme Improvement
@@ -21,12 +25,15 @@
  - v1.5.2 - Add Content 
 
 ### First delpoyment and Final MVP
-- [ ] v1.6 - Enable contact form and database connections 
+- [ ] v1.6 - Enable contact form And Test Emails 
+
+
+--- Deprecated BackEnd --- 
  - this is already partially done wuth backend loacted here https://github.com/craig2812/WebAppBackEnd
  - this requires hosting externally however
 
 ### Stretch Goals 
-- [ ] v2.0 - admin site for updates and changes 
+- [ ] v2.0 - Implement Admin Site with BackEnd for updates and changes to content and additon of services pages 
 
 # NOTES 
 - react library based navbar that is horizontally styled 
