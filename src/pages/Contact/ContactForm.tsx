@@ -72,9 +72,11 @@ export const ContactForm = () => {
                 <Grid item xs={8}>
                     <Grid item>
                         <form
+                        action="https://formsubmit.co/craig2812@gmail.com" method="POST"
                         id="contact-form"
                         // className={classes.contactForm}
                         onSubmit={handleSubmit}
+                        target="_blank"
                         >
                             <Grid item>
                                 <TextField
