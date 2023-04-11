@@ -18,7 +18,6 @@ const Contact = () => {
       console.log('contact', contactData)
     return (
         <div className="contact-container">
-            <NavBar/>
            <ContactForm/>
         </div>
     );

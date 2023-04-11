@@ -1,25 +1,23 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import {NavBar} from '../../components/NavBar/navbar';
 import './home.css';
 
 const Home = () => {
 
-const [backEndData, setBackEndData] = useState([{}])
+// const [backEndData, setBackEndData] = useState([{}])
 
-useEffect(()=>{
-  //this is calling package.json proxy value plus adding /content to end of path
-  fetch("/content").then(
-    response => response.json()).then(
-      data => {
-        setBackEndData(data)}
-    )
-      }, [])
-console.log('data', backEndData)
+// useEffect(()=>{
+//   //this is calling package.json proxy value plus adding /content to end of path
+//   fetch("/content").then(
+//     response => response.json()).then(
+//       data => {
+//         setBackEndData(data)}
+//     )
+//       }, [])
+// console.log('data', backEndData)
 
     return (
         <div className="home-container">
-            <NavBar/>
             <h1>Welcome to Bromsgrove Electricals</h1>
             <p>
                 We offer a wide range of services to help you with all your electrical

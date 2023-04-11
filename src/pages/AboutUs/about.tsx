@@ -5,7 +5,6 @@ import {NavBar} from '../../components/NavBar/navbar';
 const AboutUs = () => {
   return (
     <div>
-      <NavBar/>
       <h1>About Us</h1>
       <p>
         At [Business Name], we&apos;re a team of experienced professionals who are

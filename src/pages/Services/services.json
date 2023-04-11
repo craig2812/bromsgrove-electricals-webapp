@@ -1,0 +1,24 @@
+{
+    "services": {
+      "testing": {
+        "header": "Testing Outlets",
+        "content": "Lorem ipsum dolor sit amet..."
+      },
+      "charging": {
+        "header": "Charge Point Installation",
+        "content": "Vestibulum gravida tortor nec magna..."
+      },
+      "commercial": {
+        "header": "Commercial Electrical Work",
+        "content": "Pellentesque habitant morbi tristique..."
+      },
+      "domestic": {
+        "header": "Domestic Electrical Work",
+        "content": "Pellentesque habitant morbi tristique..."
+      },
+      "services": {
+        "header": "All Services",
+        "content": "Pellentesque habitant morbi tristique..."
+      }
+    }
+  }

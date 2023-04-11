@@ -1,17 +1,22 @@
-import React from 'react';
-import {NavBar} from "../NavBar/navbar";
-//
-// export function ServicesPage({heading = 'test Heading', content = 'test Content', buttonText = 'Go Back Home'}) {
-// //thinking this can be used to render a services page on a tabbed page in Servicces component
-//     return (
-//         <>
-//             <NavBar/>
-//             <div>
-//                 <svg></svg>
-//                 <h1>{heading}</h1>
-//                 <p>{content}</p>
-//                 <a href="/"><button>{buttonText}</button></a>
-//             </div>
-//         </>
-//     );
-// }
+import React from 'react'
+import './services.css';
+
+interface ServicesProps {
+    content: string;
+    heading: string;
+    children?: React.ReactNode;
+  }
+  
+  export const ServicesPage: React.FunctionComponent<ServicesProps> = ({
+    content,
+    heading, children  }) => {
+    return (
+      <div>
+      <div className='services-container'>
+        <h1>{heading}</h1>
+        <p>{content}</p>
+{children}
+      </div>
+      </div>
+    );
+  };
