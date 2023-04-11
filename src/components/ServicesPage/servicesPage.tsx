@@ -1,5 +1,5 @@
 import React from 'react'
-import './services.css';
+import '../../pages/Services/services.css';
 
 interface ServicesProps {
     content: string;
