@@ -14,10 +14,10 @@ const Services = () => {
         <div>
 
             <ServicesPage heading={pageData.services.services.header} content={pageData.services.services.content}>
-                {backdropItem(<Charging />, "Charging")}
+                {backdropItem(<ServicesPage heading={pageData.services.charging.header} content={pageData.services.charging.content}/>, "Charging")}
                 {backdropItem(<Domestic />, "Domestic")}
                 {backdropItem(<Testing />, "Testing")}
-                {backdropItem(<Commercial />, "Commercial")}
+                {backdropItem(<Commercial/>, "Commercial")}
             </ServicesPage>
 
         </div>

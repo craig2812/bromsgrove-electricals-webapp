@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React from 'react'
 import '../../pages/Services/services.css';
 
@@ -12,7 +13,7 @@ interface ServicesProps {
     heading, children  }) => {
     return (
       <div>
-      <div className='services-container'>
+      <div className='services-container' style={{textAlign: "center"}}>
         <h1>{heading}</h1>
         <p>{content}</p>
 {children}

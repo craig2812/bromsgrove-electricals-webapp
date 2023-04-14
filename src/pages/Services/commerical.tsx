@@ -1,5 +1,5 @@
+import { Button } from '@mui/material';
 import * as React from 'react';
-import {NavBar} from '../../components/NavBar/navbar';
 import {ServicesPage} from '../../components/ServicesPage/servicesPage';
 import pagesData from "../../pages.json";
 
@@ -10,7 +10,8 @@ const Commercial = () => {
 
     return (
         <div>
-            <ServicesPage heading={service.commercial.header} content={service.commercial.content}/>
+            <ServicesPage heading={service.commercial.header} content={service.commercial.content}>
+            </ServicesPage>
         </div>
     );
 };
