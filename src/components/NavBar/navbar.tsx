@@ -1,7 +1,8 @@
-import {AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem, Link} from '@mui/material'
+import {AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem, Link, ThemeProvider} from '@mui/material'
 import MyIcon from '@mui/icons-material/ElectricMeter'
 import React, {useState} from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { theme } from '../../theme/theme';
 
 export const NavBar = () => {
 
@@ -14,7 +15,8 @@ export const NavBar = () => {
     }
 
     return (
-        <AppBar position='static' style={{  backgroundColor: '#F5DDAB', color: '#003F56'}}>
+        <ThemeProvider theme={theme}>
+        <AppBar position='static' sx={{color: theme.palette.navBar.contrastText, backgroundColor: theme.palette.navBar.main}}>
             <Toolbar>
                 <IconButton size='large' edge='start' color='inherit' aria-label='logo' href={'/'}>
                     <MyIcon/>
@@ -22,12 +24,14 @@ export const NavBar = () => {
                 <Typography variant='h6' component={'div'} sx={{flexGrow: 1}}>
                     Bromsgrove Electricals
                 </Typography>
-                <Stack direction={'row'} spacing={2}>
+                <Stack direction={'row'} spacing={2} color={theme.palette.button.main}>
                     {pages.map((page) => (
                         <Button key={page} color={'inherit'} href={`/${page}`}>{page}</Button>
                     ))}
-                    <Button onClick={handleClick} color={'inherit'} id={'service-button'}
+                    <Button onClick={handleClick} 
+                    color={'inherit'} id={'service-button'}
                             endIcon={<KeyboardArrowDownIcon/>}>Services</Button>
+                            
                 </Stack>
                 <Menu id={'resources-menu'} open={open} anchorEl={anchorEl} onClose={handleClose}
                       MenuListProps={{
@@ -43,5 +47,6 @@ export const NavBar = () => {
                 </Menu>
             </Toolbar>
         </AppBar>
+        </ThemeProvider>
     )
 }
