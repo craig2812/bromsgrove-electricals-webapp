@@ -1,11 +1,16 @@
+import { ThemeProvider } from '@emotion/react';
+import { Card, Typography } from '@mui/material';
+import { theme } from '../../theme/theme';
 import React from 'react';
-import {NavBar} from '../../components/NavBar/navbar';
 
 
 const AboutUs = () => {
   return (
-    <div>
+  <ThemeProvider theme={theme}>
+    <Card style={{height:'100%', backgroundColor:theme.palette.navBar.light}}>
+      <Typography >
       <h1>About Us</h1>
+      </Typography>
       <p>
         At [Business Name], we&apos;re a team of experienced professionals who are
         passionate about helping our customers achieve their home improvement
@@ -30,8 +35,9 @@ const AboutUs = () => {
         dedicated to delivering exceptional results that exceed your
         expectations, every time.
       </p>
-    </div>
-  );
+      </Card>
+    </ ThemeProvider>
+    )
 };
 
 export default AboutUs;

@@ -1,11 +1,8 @@
 import  React,{ useState } from 'react';
-import fs from 'fs'
 import './contactForm.css'
+import { theme } from '../../theme/theme';
 
 import {Grid, TextField, Button, withStyles, Typography, CssBaseline} from "@mui/material";
-import PropTypes from "prop-types";
-
-
 
 const styles = {
     contactForm: {
@@ -64,9 +61,10 @@ export const ContactForm = () => {
 
 
         return (
-            <div className={'container'}>
+            <div className={'container'} style={{backgroundColor: theme.palette.navBar.main, height:'100%', display:'flex'}}>
             <CssBaseline />
-                <Typography variant="h4" align="center" component="h1" gutterBottom>
+            <div  >
+                                <Typography variant="h4" align="center" component="h1" gutterBottom>
                     {'Contact Form'.toUpperCase()}
                 </Typography>
                 <Grid item xs={8}>
@@ -140,7 +138,7 @@ export const ContactForm = () => {
                         </form>
                     </Grid>
                 </Grid>
-                
+                </div>
             </div> 
                       
         );

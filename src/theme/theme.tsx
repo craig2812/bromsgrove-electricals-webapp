@@ -25,7 +25,7 @@ export const theme = createTheme({
         main: blue[400],
         light: blue[300],
         dark: blue[800],
-        contrastText: deepOrange[200]
+        contrastText: grey[200]
       },
       backdrop:{
         main: blue[500],
