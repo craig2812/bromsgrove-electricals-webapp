@@ -61,7 +61,7 @@ export const ContactForm = () => {
 
 
         return (
-            <div className={'container'} style={{backgroundColor: theme.palette.navBar.main, height:'100%', display:'flex'}}>
+            <div className={'container'} style={{backgroundColor: theme.palette.navBar.main, height:'100%', display:'flex', justifyContent:'center'}}>
             <CssBaseline />
             <div  >
                                 <Typography variant="h4" align="center" component="h1" gutterBottom>
@@ -111,7 +111,7 @@ export const ContactForm = () => {
                                 onChange={(e) => setMessage(e.currentTarget.value)}
                                 margin="normal"
                                 multiline
-                                // rowsMax="4"
+                                rows="8"
                                 />
                             </Grid>
                             <Grid container direction="row" spacing={2} style={{ marginTop: 20 }}  className={'buttons'}>
