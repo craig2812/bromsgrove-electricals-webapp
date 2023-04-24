@@ -1,5 +1,4 @@
 import  React,{ useState } from 'react';
-import './contactForm.css'
 import { theme } from '../../theme/theme';
 
 import {Grid, TextField, Button, withStyles, Typography, CssBaseline} from "@mui/material";
@@ -61,9 +60,9 @@ export const ContactForm = () => {
 
 
         return (
-            <div className={'container'} style={{backgroundColor: theme.palette.navBar.main, height:'100%', display:'flex', justifyContent:'center'}}>
+            <div className={'container'} style={{backgroundColor: theme.palette.navBar.main, display:'flex', justifyContent:'center'}}>
             <CssBaseline />
-            <div  >
+            <div >
                                 <Typography variant="h4" align="center" component="h1" gutterBottom>
                     {'Contact Form'.toUpperCase()}
                 </Typography>
@@ -114,7 +113,7 @@ export const ContactForm = () => {
                                 rows="8"
                                 />
                             </Grid>
-                            <Grid container direction="row" spacing={2} style={{ marginTop: 20 }}  className={'buttons'}>
+                            <Grid container  spacing={2} style={{ marginTop: 20, marginBottom: 10 }}  className={'buttons'} display='flex' flexDirection={'row'} justifyContent='center'>
                             <Grid item >
                                 <Button
                                 type="reset"

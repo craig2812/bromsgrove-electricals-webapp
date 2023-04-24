@@ -17,7 +17,7 @@ const Contact = () => {
             }, [])
       console.log('contact', contactData)
     return (
-        <div className="contact-container">
+        <div>
            <ContactForm/>
         </div>
     );
