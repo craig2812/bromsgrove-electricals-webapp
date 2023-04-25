@@ -14,11 +14,11 @@
 
 
 - [ ] v1.2 - Over-all site theme / styling 
-  - [x] Add theme provider from MUI
-  - [ ] use mui color tool to develop out the theme.tsx file for use app wide https://mui.com/material-ui/customization/color/
-  - [ ] Implement theme provider across all pages / componenents 
-  - [ ] Initial Styling throughout app using theme provider
-  - [ ] App Wide Theme Implementation
+  - [x] v1.2.1 - Add theme provider from MUI
+  - [x] v1.2.2 - use mui color tool to develop out the theme.tsx file for use app wide https://mui.com/material-ui/customization/color/
+  - [ ] v1.2.3 - Implement theme provider across all pages / componenents 
+  - [ ] v1.2.4 - Initial Styling throughout app using theme provider
+  - [ ] v1.2.5 - App Wide Theme Implementation
 - [ ] v1.3 - Individual page stylings and reactive styling for mobile
   - maybe have all service pages from one component
 - [ ] v1.4 - Finalise Icons and add Images with image gallery
