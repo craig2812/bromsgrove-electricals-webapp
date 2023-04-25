@@ -7,14 +7,16 @@ import React from 'react';
 const Footer = () => {
   return (
     <ThemeProvider theme={theme}>
-<Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor:theme.palette.navBar.contrastText, display:'flex',
+<Paper 
+sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor:theme.palette.navBar.contrastText, display:'flex',
     alignContent: 'center',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection:'row',
-    minHeight: '30px'
+    minHeight: '20px'
 
-}} elevation={3}>
+}} 
+elevation={3}>
         <h1>Bromsgrove Electricals</h1>
         <p>You can contact us on 0121 12121212</p>
       </Paper>

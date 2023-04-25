@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Button, createTheme, ThemeProvider } from '@mui/material';
+import { theme } from '../../theme/theme';
+
 import { ServicesPage } from '../../components/ServicesPage/servicesPage';
 import pagesData from "../../pages.json";
-import { theme } from '../../theme/theme';
 
 const service = pagesData.services
 
