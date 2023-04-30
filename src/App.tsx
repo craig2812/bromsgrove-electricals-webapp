@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home/home';
 import AboutUs from './pages/AboutUs/about';
-import Services from './pages/Services/services';
+import Services from './pages/Services/allServices';
 import Testing from './pages/Services/testing';
 import Commercial from './pages/Services/commerical';
 import Domestic from './pages/Services/domestic';
