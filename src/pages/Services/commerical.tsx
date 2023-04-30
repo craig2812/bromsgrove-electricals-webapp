@@ -11,6 +11,7 @@ const Commercial = () => {
     return (
         <div>
             <ServicesPage heading={service.commercial.header} content={service.commercial.content}>
+            <Button href="/services" color="primary">All Services</Button>
             </ServicesPage>
         </div>
     );

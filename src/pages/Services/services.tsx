@@ -15,9 +15,9 @@ const Services = () => {
 
             <ServicesPage heading={pageData.services.services.header} content={pageData.services.services.content}>
                 {backdropItem(<ServicesPage heading={pageData.services.charging.header} content={pageData.services.charging.content}/>, "Charging")}
-                {backdropItem(<Domestic />, "Domestic")}
-                {backdropItem(<Testing />, "Testing")}
-                {backdropItem(<Commercial/>, "Commercial")}
+                {backdropItem(<ServicesPage heading={pageData.services.domestic.header} content={pageData.services.domestic.content} />, "Domestic")}
+                {backdropItem(<ServicesPage heading={pageData.services.testing.header} content={pageData.services.testing.content}/>, "Testing")}
+                {backdropItem(<ServicesPage heading={pageData.services.commercial.header} content={pageData.services.commercial.content}/>, "Commercial")}
             </ServicesPage>
 
         </div>

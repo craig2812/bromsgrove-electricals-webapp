@@ -20,11 +20,11 @@
   - [ ] Initial Styling throughout app using theme provider
   - [ ] App Wide Theme Implementation
 - [ ] v1.3 - Individual page stylings and reactive styling for mobile
-  - maybe have all service pages from one component
 - [ ] v1.4 - Finalise Icons and add Images with image gallery
 - [ ] v1.5 - Copy and content 
  - v1.5.1 - Lanuguage Packs 
  - v1.5.2 - Add Content 
+ - v1.5.3 - Pictures and Logos 
 
 ### First delpoyment and Final MVP
 - [ ] v1.6 - Enable contact form And Test Emails 

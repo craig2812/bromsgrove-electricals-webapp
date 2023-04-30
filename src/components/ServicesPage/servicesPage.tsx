@@ -18,7 +18,7 @@ interface ServicesProps {
     heading, children  }) => {
     return (
       <ThemeProvider theme={theme}>
-      <div className='services-container' style={{textAlign: "center", backgroundColor: backdropTheme.main, color: backdropTheme.contrastText, borderColor: backdropTheme.dark}}>
+      <div className='services-container' style={{textAlign: "center", backgroundColor: backdropTheme.dark, color: backdropTheme.contrastText, borderColor: backdropTheme.dark}}>
         <h1>{heading}</h1>
         <p>{content}</p>
 {children}
