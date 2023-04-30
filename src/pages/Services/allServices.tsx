@@ -3,6 +3,7 @@ import './services.css';
 import pageData from "../../pages.json";
 import { ServicesPage } from '../../components/ServicesPage/servicesPage';
 import {backdropItem} from '../../components/Backdrop/backdrop'
+import {PictureBoard} from '../../components/PictureBoard/pictureBoard';
 
 const Services = () => {
 
@@ -15,6 +16,11 @@ const Services = () => {
                 {backdropItem(<ServicesPage heading={pageData.services.testing.header} content={pageData.services.testing.content}/>, "Testing")}
                 {backdropItem(<ServicesPage heading={pageData.services.commercial.header} content={pageData.services.commercial.content}/>, "Commercial")}
             </ServicesPage>
+            <div style={{paddingInline: '10px', display:'flex', justifyContent:'center', flexDirection:'column', alignItems:'center'}}>
+                <h2>Some Pictures</h2>
+            <PictureBoard/>
+            </div>
+
 
         </div>
     );

@@ -27,7 +27,7 @@ root.render(
   }}
 >
       <Box sx={{ gridArea: 'header', bgcolor: theme.palette.navBar.contrastText }}> <NavBar /></Box>
-      <Box sx={{ gridArea: 'main', bgcolor: theme.palette.navBar.contrastText  }}>    <App />
+      <Box sx={{ gridArea: 'main', bgcolor: theme.palette.navBar.contrastText, overflow: 'auto'  }} >    <App />
       </Box>
       <Box sx={{ gridArea: 'footer', bgcolor: 'white' }}>    <Footer />
       </Box>
