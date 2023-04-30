@@ -15,7 +15,8 @@
 
 - [ ] v1.2 - Over-all site theme / styling 
   - [x] Add theme provider from MUI
-  - [ ] use mui color tool to develop out the theme.tsx file for use app wide https://mui.com/material-ui/customization/color/
+  - [x] use mui color tool to develop out the theme.tsx file for use app wide https://mui.com/material-ui/customization/color/
+  - [x] 30th april - fixed contact us form and all pages styling
   - [ ] Implement theme provider across all pages / componenents 
   - [ ] Initial Styling throughout app using theme provider
   - [ ] App Wide Theme Implementation
