@@ -9,6 +9,7 @@ import Commercial from './pages/Services/commerical';
 import Domestic from './pages/Services/domestic';
 import Charging from './pages/Services/charging';
 import Contact from "./pages/Contact/contact";
+import Admin from './pages/Admin/admin';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/charging" element={<Charging/>}/>
                 <Route path="/about" element={<AboutUs/>}/>
                 <Route path="/contact" element={<Contact/>}/>
+                <Route path="/admin" element={<Admin/>}/>
             </Routes>
         </BrowserRouter>
    
