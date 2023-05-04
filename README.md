@@ -17,15 +17,19 @@
   - [x] Add theme provider from MUI
   - [x] use mui color tool to develop out the theme.tsx file for use app wide https://mui.com/material-ui/customization/color/
   - [x] 30th april - fixed contact us form and all pages styling
-  - [ ] Implement theme provider across all pages / componenents 
-  - [ ] Initial Styling throughout app using theme provider
-  - [ ] App Wide Theme Implementation
+  - [ ] 1.2.4 - Implement theme provider across all pages / componenents 
+  - [ ] 1.2.5 - Initial Styling throughout app using theme provider
+  - [ ] 1.2.6 - App Wide Theme Implementation
 - [ ] v1.3 - Individual page stylings and reactive styling for mobile
 - [ ] v1.4 - Finalise Icons and add Images with image gallery
 - [ ] v1.5 - Copy and content 
  - v1.5.1 - Lanuguage Packs 
  - v1.5.2 - Add Content 
- - v1.5.3 - Pictures and Logos 
+- [ ] v2.0 - Add admin page to:
+  - v2.1.0 - Add ability to add images to firebase 
+  - v2.2.0 - Get Images from firebase and populate certain pages 
+  - v2.3.0 - Add ability to change content  
+  - v2.4.0 - Add password protection to admin page 
 
 ### First delpoyment and Final MVP
 - [ ] v1.6 - Enable contact form And Test Emails 
