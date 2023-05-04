@@ -14,7 +14,10 @@ const Charging = () => {
         <div>
             <ThemeProvider theme={theme}>
             <ServicesPage heading={service.charging.header} content={service.charging.content}>
-            <Button href="/services" color="primary">All Services</Button>
+            <Button href="/services" color="primary" sx={{ color: "white", ":hover": {
+      bgcolor: theme.palette.navBar.light,
+      color: theme.palette.navBar.contrastText
+    }}} >All Services</Button>
             </ServicesPage>
             </ThemeProvider>
         </div>

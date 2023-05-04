@@ -1,5 +1,6 @@
 import  React,{ useState } from 'react';
 import { theme } from '../../theme/theme';
+import '../page.css'
 
 import {Grid, TextField, Button, withStyles, Typography, CssBaseline} from "@mui/material";
 
@@ -60,9 +61,9 @@ export const ContactForm = () => {
 
 
         return (
-            <div className={'container'} style={{backgroundColor: theme.palette.navBar.main, display:'flex', justifyContent:'center'}}>
+            <div className={'page-container'} >
             <CssBaseline />
-            <div >
+            <div className='contact-container'>
                                 <Typography variant="h4" align="center" component="h1" gutterBottom>
                     {'Contact Form'.toUpperCase()}
                 </Typography>
@@ -71,30 +72,27 @@ export const ContactForm = () => {
                         <form
                         action="https://formsubmit.co/craig2812@gmail.com" method="POST"
                         id="contact-form"
-                        // className={classes.contactForm}
                         onSubmit={handleSubmit}
                         target="_blank"
                         >
-                            <Grid item>
+                            <Grid item width={"50%"} >
                                 <TextField
-                                fullWidth
                                 required
+                                fullWidth
                                 id="name"
                                 label="Name"
                                 name="userName"
-                                // className={classes.inputField}
                                 onChange={(e) => setName(e.currentTarget.value)}
                                 margin="normal"
                                 />
                             </Grid>
-                            <Grid item>
+                            <Grid item width={"50%"} >
                                 <TextField
                                 fullWidth
                                 required
                                 id="email"
                                 label="Email"
                                 name="email"
-                                // className={classes.inputField}
                                 onChange={(e) => setEmail(e.currentTarget.value)}
                                 margin="normal"
                                 />
@@ -106,11 +104,11 @@ export const ContactForm = () => {
                                 id="message"
                                 label="Message"
                                 name="message"
-                                // className={classes.inputField}
                                 onChange={(e) => setMessage(e.currentTarget.value)}
                                 margin="normal"
                                 multiline
-                                rows="8"
+                                minRows={'3'}
+                                maxRows={'8'}
                                 />
                             </Grid>
                             <Grid container  spacing={2} style={{ marginTop: 20, marginBottom: 10 }}  className={'buttons'} display='flex' flexDirection={'row'} justifyContent='center'>

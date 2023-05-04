@@ -9,7 +9,11 @@ export const theme = createTheme({
     palette: {
       primary: {
         main: '#f68d1f',
-          },
+        light: grey[100],
+        dark: grey[100], 
+        darker:grey[100] ,
+        contrastText:grey[100], 
+      },
       neutral: {
         main: grey[500],
         contrastText: '#fff',
@@ -19,7 +23,9 @@ export const theme = createTheme({
       },
       button: {
         main: grey[200],
-        dark: grey[600]
+        dark: grey[600],
+        light: grey[300],
+        contrastText: grey[600]
       },
       navBar:{
         main: blue[400],

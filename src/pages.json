@@ -2,23 +2,23 @@
   "services": {
     "testing": {
       "header": "Testing Outlets",
-      "content": "Lorem ipsum dolor sit amet..."
+      "content": "Our team of experienced electricians can help ensure that your electrical outlets are safe and functioning properly. We offer testing services to help identify any issues with your outlets and make the necessary repairs or replacements. Whether you're experiencing issues with flickering lights, a tripped circuit breaker, or any other electrical problem, we can help."
     },
     "charging": {
       "header": "Charge Point Installation",
-      "content": "Vestibulum gravida tortor nec magna..."
+      "content": "As electric cars become increasingly popular, having a reliable and efficient way to charge them is more important than ever. That's why we offer charge point installation services for your home or business. Our team of electricians can install a charging point that's tailored to your needs, ensuring that your electric car is always ready to go."
     },
     "commercial": {
       "header": "Commercial Electrical Work",
-      "content": "Pellentesque habitant morbi tristique..."
+      "content": "If you're a business owner in need of electrical services, look no further than Bromsgrove Electricals. Our team of experienced electricians can handle a wide range of commercial electrical work, from installing lighting and power outlets to performing routine safety checks. We understand the importance of minimizing downtime and ensuring that your business runs smoothly, which is why we always strive to provide prompt and efficient service."
     },
     "domestic": {
       "header": "Domestic Electrical Work",
-      "content": "Pellentesque habitant morbi tristique..."
+      "content": "At Bromsgrove Electricals, we offer a wide range of electrical services for homeowners. Whether you need help with indoor or outdoor electrical installations, routine safety checks, or any other electrical issue, our team of skilled electricians can help. We understand that your home is your sanctuary, which is why we always strive to provide high-quality service that you can trust."
     },
     "services": {
       "header": "All Services",
-      "content": "Pellentesque habitant morbi tristique..."
+      "content": "At Bromsgrove Electricals, we offer a wide range of electrical services to meet your needs. From testing outlets to charge point installation, and from commercial to domestic electrical work, we've got you covered. Our team of experienced electricians is dedicated to providing reliable and professional service, ensuring that your electrical needs are taken care of with the utmost care and attention to detail."
     }
   }
 }

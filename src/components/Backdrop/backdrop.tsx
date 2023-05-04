@@ -4,10 +4,10 @@ import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import {theme} from '../../theme/theme'
 
-
   
 
 export function backdropItem(children: JSX.Element, name: string) {
+
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
         setOpen(false);
@@ -18,7 +18,10 @@ export function backdropItem(children: JSX.Element, name: string) {
     return (
         <div>
                 <ThemeProvider theme={theme}>
-            <Button onClick={handleOpen} sx={{ color: "button.dark" }}
+            <Button onClick={handleOpen} sx={{ color: "white", ":hover": {
+      bgcolor: theme.palette.navBar.light,
+      color: theme.palette.navBar.contrastText
+    }}} 
               size="large"
               variant="text"
               >{name}</Button>
