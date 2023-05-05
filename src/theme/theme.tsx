@@ -10,9 +10,9 @@ export const theme = createTheme({
       primary: {
         main: '#f68d1f',
         light: grey[100],
-        dark: grey[100], 
-        darker:grey[100] ,
-        contrastText:grey[100], 
+        dark: grey[700], 
+        darker:grey[900] ,
+        contrastText:blue[400], 
       },
       neutral: {
         main: grey[500],

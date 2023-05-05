@@ -9,13 +9,14 @@ const Footer = () => {
   return (
     <ThemeProvider theme={theme}>
 <Paper 
-sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, backgroundColor:theme.palette.navBar.contrastText, display:'flex',
+sx={{ 
+  // position: 'fixed', bottom: 0, left: 0, right: 0, 
+color:theme.palette.primary.light , backgroundColor:theme.palette.primary.contrastText, display:'flex',
     alignContent: 'center',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection:'row',
     minHeight: '20px',
-    maxHeight:'40px',
     paddingInline: '20px'
 
 }} 

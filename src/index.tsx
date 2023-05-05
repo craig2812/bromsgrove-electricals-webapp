@@ -20,14 +20,14 @@ root.render(
     display: 'grid',
     backgroundColor: theme.palette.navBar.dark,
     gap: 0,
-    gridTemplateRows: '10% 85% 5%',
+    gridTemplateRows: '64px 17fr 1fr',
     gridTemplateAreas: `"header"
   "main"
   "footer"`,
   }}
 >
       <Box sx={{ gridArea: 'header', bgcolor: theme.palette.navBar.contrastText }}> <NavBar /></Box>
-      <Box sx={{ gridArea: 'main', bgcolor: theme.palette.navBar.contrastText, overflow: 'auto'  }} >    <App />
+      <Box sx={{ gridArea: 'main', bgcolor: theme.palette.primary.dark, overflow: 'auto'  }} >    <App />
       </Box>
       <Box sx={{ gridArea: 'footer', bgcolor: 'white' }}>    <Footer />
       </Box>

@@ -6,7 +6,7 @@ import {theme} from '../../theme/theme'
 import { deepOrange } from '@mui/material/colors';
 import {PictureBoard} from '../PictureBoard/pictureBoard';
 
-const backdropTheme = theme.palette.backdrop
+const backdropTheme = theme.palette.primary
 
 interface ServicesProps {
     content: string;
