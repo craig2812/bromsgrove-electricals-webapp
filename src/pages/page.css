@@ -11,8 +11,6 @@
     width: 100%;
     padding: 10px;
     border: solid;
-    /* background-color: rgb(70, 138, 197); */
-    /* border-color: #667373; */
-    border-width: 9px;
-    border-radius: 15px;
+    border-width: 5px;
+    border-radius: 20px;
 }

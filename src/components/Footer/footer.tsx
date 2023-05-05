@@ -8,23 +8,23 @@ import { Padding } from '@mui/icons-material';
 const Footer = () => {
   return (
     <ThemeProvider theme={theme}>
-<Paper 
-sx={{ 
-  // position: 'fixed', bottom: 0, left: 0, right: 0, 
-color:theme.palette.primary.light , backgroundColor:theme.palette.primary.contrastText, display:'flex',
-    alignContent: 'center',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection:'row',
-    minHeight: '20px',
-    paddingInline: '20px'
+      <Paper
+        sx={{
+          position: 'fixed', bottom: 0, left: 0, right: 0, 
+          color: theme.palette.primary.contrastText, backgroundColor: theme.palette.primary.dark, display: 'flex',
+          alignContent: 'center',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexDirection: 'row',
+          minHeight: '20px',
+          paddingInline: '20px'
 
-}} 
-elevation={3}>
-        <p>You can contact us on 0121 12121212</p><p> or <a href = "mailto: bromsgroveElectricals@gmail.com">bromsgroveElectricals@gmail.com</a></p>
+        }}
+        elevation={3}>
+        <p>You can contact us on 0121 12121212</p><p> or <a href="mailto: bromsgroveElectricals@gmail.com">bromsgroveElectricals@gmail.com</a></p>
       </Paper>
-      </ThemeProvider>
-    )
+    </ThemeProvider>
+  )
 };
 
 export default Footer;

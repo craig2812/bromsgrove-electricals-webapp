@@ -73,7 +73,7 @@ export const ContactForm = () => {
     return (
         <ThemeProvider theme={theme}>
             <div className={'page-container'} >
-                <div className='contact-container' style={{ backgroundColor: theme.palette.primary.light, borderColor: theme.palette.primary.contrastText, color: theme.palette.primary.contrastText }}>
+                <div className='contact-container' style={{ backgroundColor: theme.palette.primary.contrastText, borderColor: theme.palette.primary.main, color: theme.palette.primary.main }}>
                     <Typography variant="h4" align="center" component="h4" gutterBottom>
                         {'Contact Form'}
                     </Typography>

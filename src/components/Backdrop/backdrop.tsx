@@ -18,10 +18,10 @@ export function backdropItem(children: JSX.Element, name: string) {
     return (
         <div>
                 <ThemeProvider theme={theme}>
-            <Button onClick={handleOpen} sx={{ color: "white", ":hover": {
-      bgcolor: theme.palette.primary.light,
-      color: theme.palette.primary.contrastText
-    }}} 
+            <Button onClick={handleOpen} sx={{ color: 'inherit', ":hover": {
+                        bgcolor: theme.palette.primary.darker,
+                        color: theme.palette.primary.main
+                      }}}
               size="large"
               variant="text"
               >{name}</Button>

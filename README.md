@@ -19,8 +19,8 @@
   - [x] 30th april - fixed contact us form and all pages styling
   - [x] 1.2.4 - Implement theme provider across all pages / componenents 
    - also added changes to contact form for better styling and form control
-  - [ ] 1.2.5 - Initial Styling throughout app using theme provider
-  - [ ] 1.2.6 - App Wide Theme Implementation
+  - [x] 1.2.5 - Initial Styling throughout app using theme provider
+  - [x] 1.2.6 - App Wide Theme Implementation
 - [ ] v1.3 - Individual page stylings and reactive styling for mobile
 - [ ] v1.4 - Finalise Icons and add Images with image gallery
 - [ ] v1.5 - Copy and content 

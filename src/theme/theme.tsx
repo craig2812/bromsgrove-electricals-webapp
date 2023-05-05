@@ -8,11 +8,11 @@ export const theme = createTheme({
     },
     palette: {
       primary: {
-        main: '#f68d1f',
-        light: grey[100],
-        dark: grey[700], 
-        darker:grey[900] ,
-        contrastText:blue[400], 
+        main: '#006D77',
+        light: '#83C5BE',
+        dark: '#E29578', 
+        darker:'#FFDDD2' ,
+        contrastText:'#EDF6F9', 
       },
       neutral: {
         main: grey[500],
@@ -22,22 +22,25 @@ export const theme = createTheme({
         main: '#308bb4',
       },
       button: {
-        main: grey[200],
-        dark: grey[600],
-        light: grey[300],
-        contrastText: grey[600]
+        main: '#006D77',
+        light: '#83C5BE',
+        dark: '#EDF6F9', 
+        darker:'#FFDDD2' ,
+        contrastText:'#EDF6F9', 
       },
       navBar:{
-        main: blue[400],
-        light: blue[300],
-        dark: blue[800],
-        contrastText: grey[200]
+        main: '#006D77',
+        light: '#83C5BE',
+        dark: '#EDF6F9', 
+        darker:'#FFDDD2' ,
+        contrastText:'#EDF6F9', 
       },
       backdrop:{
-        main: blue[500],
-        light: blue[300],
-        dark: blue[800],
-        contrastText: grey[200]
+        main: '#006D77',
+        light: '#83C5BE',
+        dark: '#EDF6F9', 
+        darker:'#FFDDD2' ,
+        contrastText:'#EDF6F9', 
       }
     },
   });

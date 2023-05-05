@@ -14,24 +14,23 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-    <Box
-    height={'100vh'}
-  sx={{
-    display: 'grid',
-    backgroundColor: theme.palette.navBar.dark,
-    gap: 0,
-    gridTemplateRows: '64px 17fr 1fr',
-    gridTemplateAreas: `"header"
+      <Box
+        maxHeight={'100vh'}
+        sx={{
+          display: 'grid',
+          gap: 0,
+          gridTemplateRows: '1fr 17fr 1fr',
+          gridTemplateAreas: `"header"
   "main"
   "footer"`,
-  }}
->
-      <Box sx={{ gridArea: 'header', bgcolor: theme.palette.navBar.contrastText }}> <NavBar /></Box>
-      <Box sx={{ gridArea: 'main', bgcolor: theme.palette.primary.dark, overflow: 'auto'  }} >    <App />
+        }}
+      >
+        <Box sx={{ gridArea: 'header', bgcolor: theme.palette.primary.contrastText }}> <NavBar /></Box>
+        <Box sx={{ gridArea: 'main', bgcolor: theme.palette.primary.contrastText }} >    <App />
+        </Box>
+        <Box sx={{ gridArea: 'footer', bgcolor: 'white' }}>    <Footer />
+        </Box>
       </Box>
-      <Box sx={{ gridArea: 'footer', bgcolor: 'white' }}>    <Footer />
-      </Box>
-    </Box>
     </ThemeProvider>
   </React.StrictMode>
 );

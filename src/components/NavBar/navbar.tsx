@@ -16,21 +16,27 @@ export const NavBar = () => {
 
     return (
         <ThemeProvider theme={theme}>
-        <AppBar position='static' sx={{color: theme.palette.navBar.contrastText, backgroundColor: theme.palette.navBar.main}}>
+        <AppBar position='static' sx={{color: theme.palette.navBar.contrastText, backgroundColor: theme.palette.navBar.main, height:'100%'}}>
             <Toolbar>
                 <IconButton size='large' edge='start' color='inherit' aria-label='logo' href={'/'}>
                     <MyIcon/>
                 </IconButton>
-                <Typography variant='h6' component={'div'} sx={{flexGrow: 1}}>
+                <Typography variant='h6' component={'div'} sx={{flexGrow: 1, color: 'inherit'}}>
                     Bromsgrove Electricals
                 </Typography>
-                <Stack direction={'row'} spacing={2} color={theme.palette.button.main}>
+                <Stack direction={'row'} spacing={2} color={theme.palette.navBar.contrastText}>
                     {pages.map((page) => (
-                        <Button key={page} color={'inherit'} href={`/${page}`}>{page}</Button>
+                        <Button key={page} color={'inherit'} href={`/${page}`} sx={{ color: 'inherit', ":hover": {
+                            bgcolor: theme.palette.navBar.darker,
+                            color: theme.palette.navBar.main
+                          }}} >{page}</Button>
                     ))}
                     <Button onClick={handleClick} 
                     color={'inherit'} id={'service-button'}
-                            endIcon={<KeyboardArrowDownIcon/>}>Services</Button>
+                            endIcon={<KeyboardArrowDownIcon/>} sx={{ color: 'inherit', ":hover": {
+                                bgcolor: theme.palette.navBar.darker,
+                                color: theme.palette.navBar.main
+                              }}} >Services</Button>
                             
                 </Stack>
                 <Menu id={'resources-menu'} open={open} anchorEl={anchorEl} onClose={handleClose}

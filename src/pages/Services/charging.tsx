@@ -4,6 +4,7 @@ import { theme } from '../../theme/theme';
 
 import { ServicesPage } from '../../components/ServicesPage/servicesPage';
 import pagesData from "../../pages.json";
+import { ServicesButton } from '../../components/Buttons/servicesButton';
 
 const service = pagesData.services
 
@@ -14,10 +15,7 @@ const Charging = () => {
         <div>
             <ThemeProvider theme={theme}>
             <ServicesPage heading={service.charging.header} content={service.charging.content}>
-            <Button href="/services" color="primary" sx={{ color: "white", ":hover": {
-      bgcolor: theme.palette.navBar.light,
-      color: theme.palette.navBar.contrastText
-    }}} >All Services</Button>
+            <ServicesButton />
             </ServicesPage>
             </ThemeProvider>
         </div>
