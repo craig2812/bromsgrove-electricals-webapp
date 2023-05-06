@@ -10,7 +10,8 @@ import Domestic from './pages/Services/domestic';
 import Charging from './pages/Services/charging';
 import Contact from "./pages/Contact/contact";
 import Admin from './pages/Admin/admin';
-
+import Garden from './pages/Services/garden';
+import Water from './pages/Services/water';
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
                 <Route path="/commercial" element={<Commercial/>}/>
                 <Route path="/domestic" element={<Domestic/>}/>
                 <Route path="/charging" element={<Charging/>}/>
+                <Route path="/water" element={<Water/>}/>
+                <Route path="/garden" element={<Garden/>}/>
                 <Route path="/about" element={<AboutUs/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path="/admin" element={<Admin/>}/>

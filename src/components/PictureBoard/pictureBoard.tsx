@@ -6,44 +6,71 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import { useMediaQuery } from '@mui/material';
+import { ElectricalServicesRounded, Home } from '@mui/icons-material';
+import ElectricCarIcon from '@mui/icons-material/ElectricCar';
+import DeckIcon from '@mui/icons-material/Deck';
+import WaterDamageIcon from '@mui/icons-material/WaterDamage';
+import HomeIcon from '@mui/icons-material/Home';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
 
 
+
+function chooseIcon(redirect?: string) {
+  switch (redirect) {
+    case 'domestic':
+      return <HomeIcon />;
+    case 'charging':
+      return <ElectricCarIcon />
+    case 'commercial':
+      return <LocationCityIcon />
+    case 'testing':
+      return <ElectricalServicesRounded />
+    case 'water':
+      return <WaterDamageIcon />
+    case 'garden':
+      return <DeckIcon />
+    default:
+      return <InfoIcon />
+  }
+}
 
 interface PictureProps {
-    width?:number;
-    heading?: string;
-  }
-  
-export const PictureBoard: React.FunctionComponent<PictureProps> = ({width, heading}) => {
+  width?: number;
+  heading?: string;
+}
+
+export const PictureBoard: React.FunctionComponent<PictureProps> = ({ width, heading }) => {
   const isMobileMatch = useMediaQuery("(max-width:600px)"); // <-- set breakpoint
   //couod maybe break this out to 3 style plus mobile style 
   return (
-    <ImageList sx={{ height: !isMobileMatch ? 450 : null, minWidth: !isMobileMatch ? 500 :  null, maxWidth: width }}>
+    <ImageList sx={{ height: !isMobileMatch ? 450 : null, minWidth: !isMobileMatch ? 500 : null, maxWidth: width }}>
       <ImageListItem key="Subheader" cols={isMobileMatch ? 2 : 3}>
-        <ListSubheader component="div" sx={{fontWeight: 900,
-    textAlign: 'center',
-    fontSize: 'large'}}>{heading}</ListSubheader>
+        <ListSubheader component="div" sx={{
+          fontWeight: 900,
+          textAlign: 'center',
+          fontSize: 'large'
+        }}>{heading}</ListSubheader>
       </ImageListItem>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
+
           <img
             src={`${item.img}?w=248&fit=crop&auto=format`}
             srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
             alt={item.title}
             loading="lazy"
           />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={item.author}
-            actionIcon={
-              <IconButton
-                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                aria-label={`info about ${item.title}`}
-              >
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+          <a href={item.redirect && `/${item.redirect}`}>
+            <ImageListItemBar
+              title={item.title}
+              actionIcon={
+                <IconButton
+                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                  aria-label={`info about ${item.title}`}
+                >
+                  {chooseIcon(item.redirect)}              </IconButton>
+              }
+            /></a>
         </ImageListItem>
       ))}
     </ImageList>
@@ -52,74 +79,34 @@ export const PictureBoard: React.FunctionComponent<PictureProps> = ({width, head
 
 const itemData = [
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-    author: '@bkristastucchio',
-    rows: 2,
-    cols: 2,
-    featured: true,
+    img: 'https://images.unsplash.com/photo-1526131424827-a96615888a26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG9zZSUyMHRhcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+    title: 'Outdoor Tap',
+    // featured: true,
+    redirect: 'water'
   },
   {
     img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-    author: '@rollelflex_graphy726',
+    title: 'Domestic',
+    redirect: 'domestic'
   },
   {
     img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    author: '@helloimnik',
+    title: 'Commercial',
+    redirect: 'commercial'
   },
   {
     img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    author: '@nolanissac',
-    cols: 2,
+    title: 'Charging',
+    redirect: 'charging'
   },
   {
     img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    author: '@hjrc33',
-    cols: 2,
+    title: 'Garden Work',
+    redirect: 'garden'
   },
   {
     img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    author: '@arwinneil',
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-    author: '@tjdragotta',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-    author: '@katie_wasserman',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    author: '@silverdalex',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-    author: '@shelleypauls',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-    author: '@peterlaster',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    author: '@southside_customs',
-    cols: 2,
-  },
+    title: 'Testing',
+    redirect: 'testing',
+  }
 ];

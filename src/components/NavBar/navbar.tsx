@@ -51,6 +51,8 @@ export const NavBar = () => {
                               <MenuItem onClick={handleClose} component={Link} href="/domestic">Domestic Electrical Work</MenuItem>
                               <MenuItem onClick={handleClose} component={Link} href="/commercial">Commerical Electrical Work</MenuItem>
                               <MenuItem onClick={handleClose} component={Link} href="/testing">Electrical Testing</MenuItem>
+                              <MenuItem onClick={handleClose} component={Link} href="/water">Water Page</MenuItem>
+                              <MenuItem onClick={handleClose} component={Link} href="/garden">Garden</MenuItem>
                               <MenuItem divider onClick={handleClose} component={Link} href="/charging">Electric Vehicle Charging Points</MenuItem>
                               <MenuItem onClick={handleClose} component={Link} href="/services">All Services</MenuItem>
                 </Menu>

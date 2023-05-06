@@ -2,7 +2,6 @@ import { ThemeProvider } from '@emotion/react';
 import { BottomNavigation, BottomNavigationAction, Button, Card, Link, Paper, Typography, useMediaQuery } from '@mui/material';
 import { theme } from '../../theme/theme';
 import React from 'react';
-import { Padding } from '@mui/icons-material';
 
 const Footer = () => {
   const isMobileMatch = useMediaQuery("(max-width:600px)"); // <-- set breakpoint
