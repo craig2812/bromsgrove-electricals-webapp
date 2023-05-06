@@ -5,6 +5,7 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
+import { useMediaQuery } from '@mui/material';
 
 
 
@@ -14,9 +15,11 @@ interface PictureProps {
   }
   
 export const PictureBoard: React.FunctionComponent<PictureProps> = ({width, heading}) => {
+  const isMobileMatch = useMediaQuery("(max-width:600px)"); // <-- set breakpoint
+  //couod maybe break this out to 3 style plus mobile style 
   return (
-    <ImageList sx={{ height: 450, minWidth: 500, maxWidth: width }}>
-      <ImageListItem key="Subheader" cols={3}>
+    <ImageList sx={{ height: !isMobileMatch ? 450 : null, minWidth: !isMobileMatch ? 500 :  null, maxWidth: width }}>
+      <ImageListItem key="Subheader" cols={isMobileMatch ? 2 : 3}>
         <ListSubheader component="div" sx={{fontWeight: 900,
     textAlign: 'center',
     fontSize: 'large'}}>{heading}</ListSubheader>

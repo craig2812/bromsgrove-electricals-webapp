@@ -1,11 +1,14 @@
-import {AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem, Link, ThemeProvider} from '@mui/material'
+import {AppBar, Toolbar, IconButton, Typography, Stack, Button, Menu, MenuItem, Link, ThemeProvider, useMediaQuery} from '@mui/material'
 import MyIcon from '@mui/icons-material/ElectricMeter'
 import React, {useState} from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { theme } from '../../theme/theme';
 
-export const NavBar = () => {
 
+
+
+export const NavBar = () => {
+    const isMobileMatch = useMediaQuery("(max-width:600px)"); // <-- set breakpoint
     const pages = ['About', 'Contact'];
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl)
@@ -18,12 +21,12 @@ export const NavBar = () => {
         <ThemeProvider theme={theme}>
         <AppBar position='static' sx={{color: theme.palette.navBar.contrastText, backgroundColor: theme.palette.navBar.main, height:'100%'}}>
             <Toolbar>
-                <IconButton size='large' edge='start' color='inherit' aria-label='logo' href={'/'}>
+          <IconButton size='large' edge='start' color='inherit' aria-label='logo' href={'/'}>
                     <MyIcon/>
                 </IconButton>
-                <Typography variant='h6' component={'div'} sx={{flexGrow: 1, color: 'inherit'}}>
+                {!isMobileMatch && <Typography variant='h6' component={'div'} sx={{flexGrow: 1, color: 'inherit'}}>
                     Bromsgrove Electricals
-                </Typography>
+                </Typography>}
                 <Stack direction={'row'} spacing={2} color={theme.palette.navBar.contrastText}>
                     {pages.map((page) => (
                         <Button key={page} color={'inherit'} href={`/${page}`} sx={{ color: 'inherit', ":hover": {

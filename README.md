@@ -1,9 +1,8 @@
 # Plan 
 
-
+- [x] v1.3 - Individual page stylings and reactive styling for mobile
 
 ## Remaining Work 
-- [ ] v1.3 - Individual page stylings and reactive styling for mobile
 - [ ] v1.4 - Finalise Icons and add Images with image gallery
 - [ ] v1.5 - Copy and content 
   - v1.5.1 - Lanuguage Packs 

@@ -6,6 +6,9 @@
     padding: 5% 10%;
     text-align: justify;
 }
+h1{
+text-align: center;
+}
 
 .contact-container{
     width: 100%;
