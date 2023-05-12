@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app' // no compat for new SDK
 import { getDatabase, ref } from 'firebase/database'
+import {getStorage} from 'firebase/storage'
 
 
 const firebaseConfig = {
@@ -12,4 +13,5 @@ const firebaseConfig = {
     measurementId: "G-EEG4JY02JS"
   };
 const app = initializeApp(firebaseConfig)
+export const storage = getStorage(app)
 export const database = getDatabase(app)

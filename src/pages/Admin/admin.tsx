@@ -1,30 +1,59 @@
 import * as React from 'react';
-import { addPicture, fetchPics, getPictures } from '../../firebase/getData';
+import { useState } from 'react';
+import { addPicture, fetchPics } from '../../firebase/getData';
 import '../page.css';
 import { db } from '../../firebase/getData';
+import { getPictures } from '../../firebase/getStorage'
+import { ref, uploadBytes, listAll } from 'firebase/storage'
+import { storage } from '../../firebase/config';
+import {v4 as uuidv4} from 'uuid';
 
 const Home = () => {
 
-const pictures = getPictures(db)
-const pics = fetchPics()
-function addPic(){
-addPicture({
-    descritption: "Testing",
-    id: 12,
-    url: '',
-    type: '',
-    isShown: false
-})}
-pics.then(pic => pic.forEach(picture => {
-    console.log(picture)
-}))
+    const initialFile = new File(["foo"], "foo.txt", {
+        type: "text/plain",
+      })
+    const imageUuid = uuidv4();
+    const [imageUpload, setImageUpload] = useState<File>(initialFile)
+    const [imageType, setImageType] = useState('misc')
+    const [imageName, setImageName] = useState('')
+    const imagekListRef = ref(storage, "images/")
+
+React.useEffect(() => {
+    listAll(imagekListRef).then((response) => {
+        console.log('response',response)
+    })
+}, []
+)
+    const pictures = getPictures(db)
+    const pics = fetchPics()
+
+    const handleImageUpload = () => {
+            const imageFullName = imageType + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageUuid
+            const imageRef = ref(storage, `images/${imageFullName}`)
+            console.log('button clicked', imageFullName)
+
+            uploadBytes(imageRef, imageUpload).then(() => {
+                console.log(`image uploaded: ${imageFullName}`)
+                alert(`image uploaded: ${imageFullName}`)
+            })
+    };
+
     return (
         <div className="page-container">
-            <h1>Welcome to Bromsgrove Electricals</h1>
-            Bromsgrove Electricals provides reliable and professional electrical services for your home or business. Our services include indoor and outdoor installations, routine checks, and vehicle charge point installation. Trust our experienced electricians to deliver exceptional results and ensure your satisfaction.
-            
-            <button onClick={addPic}>Add Picture</button>
-            </div>
+            <h1>Admin Page</h1>
+
+            <input type="file" onChange={(event) => { if(event.target.files) {setImageUpload(event?.target.files[0])} }}></input>
+            Image Type
+            <select name="bad_day" onChange={(event) => { setImageType(event.target.value) }}>
+                <option value="electrical">Electrical</option>
+                <option value="garden" selected>Garden</option>
+                <option value="misc" selected>Misc</option>
+            </select>
+            Image Name (optional)
+            <input type="text" onChange={(event) => { setImageName(event.target.value) }}></input>
+            <button onClick={handleImageUpload}>Add Picture</button>
+        </div>
     );
 };
 

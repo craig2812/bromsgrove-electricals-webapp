@@ -3,14 +3,18 @@
 - [x] v1.3 - Individual page stylings and reactive styling for mobile
 - [x] v1.4 - Finalise Icons and add Images with image gallery
   - [x] v1.4.0 - Update photo test add redirect to image bar 
-  - [ ] v1.4.1 - updaet all photo srcs 
+  - [ ] v1.4.1 - Add firebase storage to add and read images 
+    - [ ] Clean up code 
+    - [ ] Clean up firebase storage paths 
+    - [ ] Add images 
+    - [ ] Render chosen images on certain pages 
 
 
 ## Remaining Work 
 - [ ] v1.5 - Copy and content 
   - v1.5.1 - Lanuguage Packs 
   - v1.5.2 - Add Content 
-- [ ] v1.6 - Firebase linkup
+- [ ] v1.6 - Complete and Clean up Firebase linkup
   - Collections:  Pictures / reviews / content / contact form
     - each to have add, get, update endpoint added
 
