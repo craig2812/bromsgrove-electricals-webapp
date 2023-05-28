@@ -40,25 +40,25 @@ export const db = getFirestore(app);
 // })
 // }
 
-// export async function addPicture(pictureObj: Picture) {
-//     await setDoc(doc(db, "pictures", pictureObj.id.toString()), {
-//         id: pictureObj.id,    
-//         url: pictureObj.url,
-//         description: pictureObj.descritption,
-//         type: pictureObj.type,
-//         isShown: pictureObj.isShown
-//     });
-//     console.log("Document written with ID:", pictureObj.id);
-// }
+export async function addPicture(pictureObj: Picture) {
+    await setDoc(doc(db, "pictures", pictureObj.id.toString()), {
+        id: pictureObj.id,    
+        url: pictureObj.url,
+        description: pictureObj.descritption,
+        type: pictureObj.type,
+        isShown: pictureObj.isShown
+    });
+    console.log("Document written with ID:", pictureObj.id);
+}
 
 
-// type Picture = {
-//     id: number;
-//     url: string;
-//     descritption: string;
-//     type: string;
-//     isShown: boolean;
-// };
+type Picture = {
+    id: number;
+    url: string;
+    descritption: string;
+    type: string;
+    isShown: boolean;
+};
 
 // export async function fetchPics(): Promise<Picture[]> {
 //     const picRef = collection(db, 'pictures');

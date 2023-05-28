@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, Firestore } from 'firebase/firestore';
 import { doc, setDoc } from "firebase/firestore";
 import { set } from 'firebase/database';
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
+import { ref, uploadBytes, listAll, getDownloadURL, updateMetadata } from 'firebase/storage'
 import {storage} from './config'
 import React from 'react';
 
@@ -55,7 +55,32 @@ React.useEffect(() => {
 }, []
 )
 }
-   
+
+
+// Create file metadata to update
+
+
+//   export const updatePicMetaData = () => {
+
+//     const pic1 = ref(storage, 'customer/pic1.jpg');
+
+//     const newMetadata = {
+//         customMetadata: {
+//             'location': 'Yosemite, CA, USA',
+//             'activity': 'Hiking',
+//             'type': 'indoor'
+//           }
+//     };
+    
+    
+//     // Update metadata properties
+//     updateMetadata(pic1, newMetadata)
+//       .then((metadata) => {
+//         console.log('metadata', metadata)
+//       }).catch((error) => {
+//         // Uh-oh, an error occurred!
+//       });
+//   }
 export const handleImageUpload = (imageType: string, imageName: string, imageUpload: File, imageUuid?: string) => {
     const imageFullName = imageType + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageUuid
     const imageRef = ref(storage, `images/${imageFullName}`)
