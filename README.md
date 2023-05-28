@@ -6,8 +6,16 @@
   - [ ] v1.4.1 - Add firebase storage to add and read images 
     - [ ] Clean up code 
     - [ ] Clean up firebase storage paths 
+    
     Currently working on the above two points, need to try using the retrived src url to render an image 
     Also need to think abotu best way to filter when using firebase storage - potentially pathName
+
+    PIVOT - think the best plan here is to....
+     - when uploading picture, also upload document
+     - get picture full image download url and add this to the document 
+     - can then retrieve from database 
+     - so upload to stoorage => add url and details to database => retieve from database
+
     - [ ] Add images 
     - [ ] Render chosen images on certain pages 
 
