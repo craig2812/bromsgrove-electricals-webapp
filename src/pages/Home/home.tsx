@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { addPicture, fetchPics, getPictures } from '../../firebase/getData';
 import '../page.css';
 import { db } from '../../firebase/getData';
 import { ThemeProvider } from '@emotion/react';

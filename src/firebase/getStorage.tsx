@@ -2,6 +2,11 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, Firestore } from 'firebase/firestore';
 import { doc, setDoc } from "firebase/firestore";
 import { set } from 'firebase/database';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage'
+import {storage} from './config'
+import React from 'react';
+
+
 
 // Follow this pattern to import other Firebase services
 // import { } from 'firebase/<service>';
@@ -18,52 +23,46 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+export const firestore = getFirestore(app);
 
-// Get a list of pictures from your database
-export async function getPictures(db: Firestore) {
-    const pictureCollection = collection(db, '/pictures');
-    const picSnapshot = await getDocs(pictureCollection);
-    const pictureList = picSnapshot.docs.map(pic => pic.data());
-    return pictureList;
+
+export async function fetchPics(route: string){
+const imageListRef = ref(storage, route)
+
+// await listAll(imageListRef).then((response) => {
+//     const ImageURL = getDownloadURL(ref(storage, response.items[0].fullPath));
+//     response.items.forEach(
+//         (item)=> {
+//            const fullLink = getDownloadURL(ref(storage, item.fullPath))
+//            console.log('full link', fullLink)
+//         }
+//     )
+//     return response
+// })}
+
+React.useEffect(() => {
+    listAll(imageListRef).then((response) => {
+    response.items.forEach(
+        (item)=> {
+            getDownloadURL(ref(storage, item.fullPath)).then(
+            (link) => console.log('full link', link)
+           )
+           
+        }
+    )
+        return response
+    })
+}, []
+)
 }
+   
+export const handleImageUpload = (imageType: string, imageName: string, imageUpload: File, imageUuid?: string) => {
+    const imageFullName = imageType + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageUuid
+    const imageRef = ref(storage, `images/${imageFullName}`)
+    console.log('button clicked', imageFullName)
 
-
-// Add a new document in collection "cities"
-export async function addPictureNoId() {
-await setDoc(doc(db, "pictures", "new-picture"), {
-  id: "Tester",
-  url: "CA",
-  description: "USA",
-  type: "Indoor",
-  isShown: false
-})
-}
-
-export async function addPicture(pictureObj: Picture) {
-    await setDoc(doc(db, "pictures", pictureObj.id.toString()), {
-        id: pictureObj.id,    
-        url: pictureObj.url,
-        description: pictureObj.descritption,
-        type: pictureObj.type,
-        isShown: pictureObj.isShown
-    });
-    console.log("Document written with ID:", pictureObj.id);
-}
-
-
-type Picture = {
-    id: number;
-    url: string;
-    descritption: string;
-    type: string;
-    isShown: boolean;
+    uploadBytes(imageRef, imageUpload).then(() => {
+        console.log(`image uploaded: ${imageFullName}`)
+        alert(`image uploaded: ${imageFullName}`)
+    })
 };
-
-export async function fetchPics(): Promise<Picture[]> {
-    const picRef = collection(db, 'pictures');
-    const querySnapshot = await getDocs(picRef);
-    const pictures = querySnapshot.docs.map((doc) => doc.data() as Picture);
-
-    return pictures;
-}

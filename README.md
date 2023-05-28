@@ -6,6 +6,8 @@
   - [ ] v1.4.1 - Add firebase storage to add and read images 
     - [ ] Clean up code 
     - [ ] Clean up firebase storage paths 
+    Currently working on the above two points, need to try using the retrived src url to render an image 
+    Also need to think abotu best way to filter when using firebase storage - potentially pathName
     - [ ] Add images 
     - [ ] Render chosen images on certain pages 
 

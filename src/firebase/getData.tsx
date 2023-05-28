@@ -21,49 +21,49 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
 // Get a list of pictures from your database
-export async function getPictures(db: Firestore) {
-    const pictureCollection = collection(db, '/pictures');
-    const picSnapshot = await getDocs(pictureCollection);
-    const pictureList = picSnapshot.docs.map(pic => pic.data());
-    return pictureList;
-}
+// export async function getPictures(db: Firestore) {
+//     const pictureCollection = collection(db, '/pictures');
+//     const picSnapshot = await getDocs(pictureCollection);
+//     const pictureList = picSnapshot.docs.map(pic => pic.data());
+//     return pictureList;
+// }
 
 
 // Add a new document in collection "cities"
-export async function addPictureNoId() {
-await setDoc(doc(db, "pictures", "new-picture"), {
-  id: "Tester",
-  url: "CA",
-  description: "USA",
-  type: "Indoor",
-  isShown: false
-})
-}
+// export async function addPictureNoId() {
+// await setDoc(doc(db, "pictures", "new-picture"), {
+//   id: "Tester",
+//   url: "CA",
+//   description: "USA",
+//   type: "Indoor",
+//   isShown: false
+// })
+// }
 
-export async function addPicture(pictureObj: Picture) {
-    await setDoc(doc(db, "pictures", pictureObj.id.toString()), {
-        id: pictureObj.id,    
-        url: pictureObj.url,
-        description: pictureObj.descritption,
-        type: pictureObj.type,
-        isShown: pictureObj.isShown
-    });
-    console.log("Document written with ID:", pictureObj.id);
-}
+// export async function addPicture(pictureObj: Picture) {
+//     await setDoc(doc(db, "pictures", pictureObj.id.toString()), {
+//         id: pictureObj.id,    
+//         url: pictureObj.url,
+//         description: pictureObj.descritption,
+//         type: pictureObj.type,
+//         isShown: pictureObj.isShown
+//     });
+//     console.log("Document written with ID:", pictureObj.id);
+// }
 
 
-type Picture = {
-    id: number;
-    url: string;
-    descritption: string;
-    type: string;
-    isShown: boolean;
-};
+// type Picture = {
+//     id: number;
+//     url: string;
+//     descritption: string;
+//     type: string;
+//     isShown: boolean;
+// };
 
-export async function fetchPics(): Promise<Picture[]> {
-    const picRef = collection(db, 'pictures');
-    const querySnapshot = await getDocs(picRef);
-    const pictures = querySnapshot.docs.map((doc) => doc.data() as Picture);
+// export async function fetchPics(): Promise<Picture[]> {
+//     const picRef = collection(db, 'pictures');
+//     const querySnapshot = await getDocs(picRef);
+//     const pictures = querySnapshot.docs.map((doc) => doc.data() as Picture);
 
-    return pictures;
-}
+//     return pictures;
+// }

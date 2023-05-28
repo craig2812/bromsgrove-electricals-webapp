@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { addPicture, fetchPics } from '../../firebase/getData';
+import { fetchPics, handleImageUpload } from '../../firebase/getStorage';
 import '../page.css';
 import { db } from '../../firebase/getData';
-import { getPictures } from '../../firebase/getStorage'
 import { ref, uploadBytes, listAll } from 'firebase/storage'
 import { storage } from '../../firebase/config';
 import {v4 as uuidv4} from 'uuid';
@@ -17,16 +16,8 @@ const Home = () => {
     const [imageUpload, setImageUpload] = useState<File>(initialFile)
     const [imageType, setImageType] = useState('misc')
     const [imageName, setImageName] = useState('')
-    const imagekListRef = ref(storage, "images/")
 
-React.useEffect(() => {
-    listAll(imagekListRef).then((response) => {
-        console.log('response',response)
-    })
-}, []
-)
-    const pictures = getPictures(db)
-    const pics = fetchPics()
+    const pictures2 = fetchPics('customer/')
 
     const handleImageUpload = () => {
             const imageFullName = imageType + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageUuid
