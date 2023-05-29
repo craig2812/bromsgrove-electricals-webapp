@@ -1,10 +1,7 @@
-import { getDownloadURL, getMetadata, listAll, ref } from 'firebase/storage';
 import * as React from 'react';
 import { useState } from 'react';
-import { storage, database } from '../../firebase/config';
 import { addImage, fetchImages, fetchReviews } from '../../firebase/firebaseController';
 import '../page.css';
-import * as firebase from 'firebase/app'
 import 'firebase/firestore'
 
 

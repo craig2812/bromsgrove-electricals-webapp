@@ -1,14 +1,13 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, Firestore } from 'firebase/firestore';
 import { doc, setDoc } from "firebase/firestore";
-import { set } from 'firebase/database';
 import { ref, uploadBytes, listAll, getDownloadURL, updateMetadata, getMetadata } from 'firebase/storage'
 import { firebaseConfig, storage } from './config'
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const imageUuid = uuidv4();
+const imageUuid = new Date().getUTCSeconds;
 const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
 
