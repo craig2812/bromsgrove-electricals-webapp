@@ -1,6 +1,5 @@
 import * as React from 'react';
 import '../page.css';
-import { db } from '../../firebase/getData';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from '../../theme/theme';
 

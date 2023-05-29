@@ -17,3 +17,9 @@ text-align: center;
     border-width: 5px;
     border-radius: 20px;
 }
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

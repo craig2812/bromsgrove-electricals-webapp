@@ -3,7 +3,7 @@ import { getDatabase, ref } from 'firebase/database'
 import {getStorage} from 'firebase/storage'
 
 
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyAUG8MvYI1nD9aoEYRD5Nnlo6Bg_qLnD8Q",
     authDomain: "bromsgrovemaintenance7559.firebaseapp.com",
     projectId: "bromsgrovemaintenance7559",
