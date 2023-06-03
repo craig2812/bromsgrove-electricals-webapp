@@ -12,7 +12,8 @@ import DeckIcon from '@mui/icons-material/Deck';
 import WaterDamageIcon from '@mui/icons-material/WaterDamage';
 import HomeIcon from '@mui/icons-material/Home';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
-import { fetchImages, ImageFetchObject } from '../../firebase/firebaseController';
+import { pictureDatabase } from './pictureDatabase';
+import { ImageFetchObject } from '../../firebase/firebaseController';
 
 
 
@@ -38,16 +39,15 @@ function chooseIcon(redirect?: string) {
 interface PictureProps {
   width?: number;
   heading?: string;
-  folder?: string;
+  images?: ImageFetchObject[];
 }
 
-export const PictureBoard: React.FunctionComponent<PictureProps> = ({ width, heading, folder = '/images'}) => {
-  const isMobileMatch = useMediaQuery("(max-width:600px)"); // <-- set breakpoint
-  //couod maybe break this out to 3 style plus mobile style 
+// const pictures = pictureDatabase
 
-let imageArray: ImageFetchObject[] = []
-  const image = fetchImages(folder).then((items) => imageArray = items)
-console.log('imageArray', imageArray)
+
+export const PictureBoard: React.FunctionComponent<PictureProps> = ({ width, heading, images}) => {
+  const isMobileMatch = useMediaQuery("(max-width:600px)");
+
 
   return (
     <ImageList sx={{ height: !isMobileMatch ? 450 : null, minWidth: !isMobileMatch ? 500 : null, maxWidth: width }}>
@@ -58,8 +58,8 @@ console.log('imageArray', imageArray)
           fontSize: 'large'
         }}>{heading}</ListSubheader>
       </ImageListItem>
-        {imageArray?.map((item) => (
-        <ImageListItem key={item.name}>
+        {images?.map((item) => (
+        <ImageListItem key={item.name+Math.floor(Math.random() * 100000)}>
 
           <img
             src={`${item.url}?w=248&fit=crop&auto=format`}

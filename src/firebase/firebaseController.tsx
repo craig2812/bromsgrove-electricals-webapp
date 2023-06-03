@@ -5,10 +5,12 @@ import { ref, uploadBytes, listAll, getDownloadURL, updateMetadata, getMetadata,
 import { firebaseConfig, storage, firestore} from './config'
 import React from 'react';
 
-const imageMiliSeconds = new Date().getUTCMilliseconds();
+const imageSerial = Math.floor(Math.random() * 1000)
 const app = initializeApp(firebaseConfig);
 
 //Images from Firebase Storage
+
+// Commented out as can't get working with any local or deployed app 
 
 export interface ImageFetchObject  {
 name: string,
@@ -25,7 +27,7 @@ export const fetchImages = async (imageFolder: string) => {
         const metadata = await getMetadata(imageRef);
         const createdAt = new Date(metadata.timeCreated);
         return {
-            name: metadata.customMetadata?.name,
+            name: metadata.customMetadata?.name.length != 0 ? metadata.customMetadata?.name : 'picture',
             url: await getDownloadURL(imageRef),
             createdAt: createdAt,
             category: metadata.customMetadata?.category
@@ -40,7 +42,7 @@ export const fetchImages = async (imageFolder: string) => {
 
 
 export const addImage = (imageCategory: string, imageName: string, imageUpload: File) => {
-    const imageFullName = imageCategory + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageMiliSeconds
+    const imageFullName = imageCategory + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageSerial
     const imageRef = ref(storage, `${imageCategory}/${imageFullName}`)
     const customMeta = {
         contentType: 'image/jpeg',
