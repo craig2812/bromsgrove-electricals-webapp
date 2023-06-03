@@ -41,8 +41,12 @@ const Admin = () => {
                 Image Type
                 <select defaultValue={'DEFAULT'} name="bad_day" onChange={(event) => { setImageCategory(event.target.value) }}>
                     <option value="DEFAULT" disabled>Choose an image type ...</option>
-                    <option value="electrical">Electrical</option>
+                    <option value="domestic">Domestic</option>
                     <option value="garden" >Garden</option>
+                    <option value="testing">Testing</option>
+                    <option value="charging">Charging</option>
+                    <option value="water" >Water</option>
+                    <option value="commercial">Commercial</option>
                     <option value="misc">Misc</option>
                 </select>
                 Image Name (optional)

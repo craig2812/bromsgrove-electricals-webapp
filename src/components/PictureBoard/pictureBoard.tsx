@@ -12,6 +12,7 @@ import DeckIcon from '@mui/icons-material/Deck';
 import WaterDamageIcon from '@mui/icons-material/WaterDamage';
 import HomeIcon from '@mui/icons-material/Home';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
+import { fetchImages, ImageFetchObject } from '../../firebase/firebaseController';
 
 
 
@@ -37,11 +38,17 @@ function chooseIcon(redirect?: string) {
 interface PictureProps {
   width?: number;
   heading?: string;
+  folder?: string;
 }
 
-export const PictureBoard: React.FunctionComponent<PictureProps> = ({ width, heading }) => {
+export const PictureBoard: React.FunctionComponent<PictureProps> = ({ width, heading, folder = '/images'}) => {
   const isMobileMatch = useMediaQuery("(max-width:600px)"); // <-- set breakpoint
   //couod maybe break this out to 3 style plus mobile style 
+
+let imageArray: ImageFetchObject[] = []
+  const image = fetchImages(folder).then((items) => imageArray = items)
+
+
   return (
     <ImageList sx={{ height: !isMobileMatch ? 450 : null, minWidth: !isMobileMatch ? 500 : null, maxWidth: width }}>
       <ImageListItem key="Subheader" cols={isMobileMatch ? 2 : 3}>
@@ -51,24 +58,25 @@ export const PictureBoard: React.FunctionComponent<PictureProps> = ({ width, hea
           fontSize: 'large'
         }}>{heading}</ListSubheader>
       </ImageListItem>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
+        {imageArray?.map((item) => (
+        <ImageListItem key={item.name}>
 
           <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
+            src={`${item.url}?w=248&fit=crop&auto=format`}
+            srcSet={`${item.url}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            alt={item.name}
             loading="lazy"
           />
-          <a href={item.redirect && `/${item.redirect}`}>
+          <a href={item.category && `/${item.category}`}>
             <ImageListItemBar
-              title={item.title}
+              title={item.name}
               actionIcon={
                 <IconButton
                   sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  aria-label={`info about ${item.title}`}
+                  aria-label={`info about ${item.name}`}
                 >
-                  {chooseIcon(item.redirect)}              </IconButton>
+                  {chooseIcon(item.category)}              
+                  </IconButton>
               }
             /></a>
         </ImageListItem>

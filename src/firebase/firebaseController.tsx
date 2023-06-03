@@ -7,11 +7,18 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const imageUuid = new Date().getUTCSeconds;
+const imageMiliSeconds = new Date().getUTCMilliseconds();
 const app = initializeApp(firebaseConfig);
 export const firestore = getFirestore(app);
 
 //Images from Firebase Storage
+
+export interface ImageFetchObject  {
+name: string,
+url: string,
+createdAt: Date,
+category?: string
+}
 
 export const fetchImages = async (imageFolder: string) => {
     const folderRef = ref(storage, imageFolder)
@@ -21,10 +28,11 @@ export const fetchImages = async (imageFolder: string) => {
         const metadata = await getMetadata(imageRef);
         const createdAt = new Date(metadata.timeCreated);
         return {
-            name: imageRef.name,
+            name: metadata.customMetadata?.name,
             url: await getDownloadURL(imageRef),
-            createdAt,
-        };
+            createdAt: createdAt,
+            category: metadata.customMetadata?.category
+        } as ImageFetchObject;
     });
 
     const imagesData = await Promise.all(promises);
@@ -35,8 +43,8 @@ export const fetchImages = async (imageFolder: string) => {
 
 
 export const addImage = (imageCategory: string, imageName: string, imageUpload: File) => {
-    const imageFullName = imageCategory + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageUuid
-    const imageRef = ref(storage, `images/${imageFullName}`)
+    const imageFullName = imageCategory + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageMiliSeconds
+    const imageRef = ref(storage, `${imageCategory}/${imageFullName}`)
     const customMeta = {
         contentType: 'image/jpeg',
         customMetadata: {
