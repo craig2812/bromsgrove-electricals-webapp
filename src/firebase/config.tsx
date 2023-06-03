@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app' // no compat for new SDK
 import { getDatabase, ref } from 'firebase/database'
+import { getFirestore } from 'firebase/firestore';
 import {getStorage} from 'firebase/storage'
 
 
@@ -16,3 +17,4 @@ const app = initializeApp(firebaseConfig)
 
 export const storage = getStorage(app)
 export const database = getDatabase(app)
+export const firestore = getFirestore(app);
