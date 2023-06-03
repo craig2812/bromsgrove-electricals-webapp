@@ -13,5 +13,6 @@ export const firebaseConfig = {
     measurementId: "G-EEG4JY02JS"
   };
 const app = initializeApp(firebaseConfig)
+
 export const storage = getStorage(app)
 export const database = getDatabase(app)

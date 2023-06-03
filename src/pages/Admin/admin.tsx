@@ -22,7 +22,7 @@ const Admin = () => {
     const [images, setImages] = useState<ImageData[]>([]);
 
     React.useEffect(() => {
-        const images = fetchImages('images').then((images) => console.log('images', images));
+        const images = fetchImages('images/').then((images) => console.log('imagesFetc hexc')).catch((e)=> console.log(e));
         const revoew = fetchReviews().then((rev)=> console.log('reviews', rev))
     }, []);
 

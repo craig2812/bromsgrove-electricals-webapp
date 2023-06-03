@@ -47,7 +47,7 @@ export const PictureBoard: React.FunctionComponent<PictureProps> = ({ width, hea
 
 let imageArray: ImageFetchObject[] = []
   const image = fetchImages(folder).then((items) => imageArray = items)
-
+console.log('imageArray', imageArray)
 
   return (
     <ImageList sx={{ height: !isMobileMatch ? 450 : null, minWidth: !isMobileMatch ? 500 : null, maxWidth: width }}>

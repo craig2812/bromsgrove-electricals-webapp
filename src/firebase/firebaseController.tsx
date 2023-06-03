@@ -1,10 +1,11 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, Firestore } from 'firebase/firestore';
 import { doc, setDoc } from "firebase/firestore";
-import { ref, uploadBytes, listAll, getDownloadURL, updateMetadata, getMetadata } from 'firebase/storage'
-import { firebaseConfig, storage } from './config'
+import { ref, uploadBytes, listAll, getDownloadURL, updateMetadata, getMetadata, getStorage } from 'firebase/storage'
+import { firebaseConfig, storage, database} from './config'
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { getDatabase } from 'firebase/database';
 
 
 const imageMiliSeconds = new Date().getUTCMilliseconds();
