@@ -6,6 +6,7 @@
   - [ ] v1.4.1 - Add firebase storage to add and read images 
     - [x] Clean up code 
     - [x] Clean up firebase storage paths into one file for pics and reviews
+    Have images fetch working correctly now - but image upload not working fluidy, seems to intermittently crash
     - [ ] Add images and Reviews
     - [ ] Render chosen images on certain pages 
     - [ ] Render reviews on chosen page

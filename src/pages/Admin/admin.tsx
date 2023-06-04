@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { addImage, fetchImages, fetchReviews, ImageFetchObject } from '../../firebase/firebaseController';
 import '../page.css';
 import 'firebase/firestore'
-import { PictureBoard } from '../../components/PictureBoard/pictureBoard';
+import { Gallery } from '../../components/PictureBoard/pictureBoard';
 
 
 const Admin = () => {
@@ -20,19 +20,8 @@ const Admin = () => {
     const [imageUpload, setImageUpload] = useState<File>(initialFile)
     const [imageCategory, setImageCategory] = useState('misc')
     const [imageName, setImageName] = useState('')
-    const [images, setImages] = useState([]);
-    const imageArray: ImageFetchObject[] = []
 
-    React.useEffect(() => {
-        const images = fetchImages('testing/').then((images) => images.forEach((image) => imageArray.push(image)))
-        
-        // console.log('imagesFetched', setImages(images))).catch((e)=> console.log(e));
-        console.log('imageArray', imageArray)
-        const revoew = fetchReviews().then((rev)=> console.log('reviews', rev))
-    }, []);
-
-
-
+//todo Image upload is a bit finacky
     const handleImageUpload = () => {
         addImage(imageCategory, imageName, imageUpload)
         alert('Image has been successfully uploaded: ' + imageUpload.name)
@@ -57,11 +46,19 @@ const Admin = () => {
                 Image Name (optional)
                 <input type="text" onChange={(event) => { setImageName(event.target.value) }}></input>
                 <button type="submit">Add Picture</button>
+            
             </form>
-            <PictureBoard images={imageArray}></PictureBoard>
+            <Gallery></Gallery>
         </div>
     );
 };
 
 
 export default Admin;
+
+
+    // React.useEffect(() => {
+    //     // const images = fetchImages('images/').then((images) => images.forEach((image) => imageArray.push(image)))
+    //     // console.log('imageArryaAdmin', imageArray)
+    //     const reviews = fetchReviews().then((rev)=> console.log('reviews', rev))
+    // }, []);

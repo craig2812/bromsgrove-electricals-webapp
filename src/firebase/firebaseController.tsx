@@ -3,7 +3,7 @@ import { getFirestore, collection, addDoc, getDocs, Firestore } from 'firebase/f
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, listAll, getDownloadURL, updateMetadata, getMetadata, getStorage } from 'firebase/storage'
 import { firebaseConfig, storage, firestore} from './config'
-import React from 'react';
+import React, { useState } from 'react';
 
 const imageSerial = Math.floor(Math.random() * 1000)
 const app = initializeApp(firebaseConfig);
@@ -19,6 +19,7 @@ createdAt: Date,
 category?: string
 }
 
+// Not working as intended - needs to figure out how to only call function once and not overwrite images array on each render
 export const fetchImages = async (imageFolder: string) => {
     const folderRef = ref(storage, imageFolder)
 
@@ -41,18 +42,21 @@ export const fetchImages = async (imageFolder: string) => {
 };
 
 
-export const addImage = (imageCategory: string, imageName: string, imageUpload: File) => {
-    const imageFullName = imageCategory + '_' + (imageName.length > 0 ? imageName : imageUpload?.name) + '_' + imageSerial
-    const imageRef = ref(storage, `${imageCategory}/${imageFullName}`)
+export const addImage = (imageCategory = 'misc', imageName: string, imageUpload: File) => {
+    const imageNameRef = imageName.toString().length > 0 ? imageName : imageUpload?.name
+    const imageFullName = imageNameRef + '_' + imageSerial
+    const imageRef = ref(storage, `images/${imageFullName}`)
     const customMeta = {
         contentType: 'image/jpeg',
         customMetadata: {
-            'name': imageName,
+            'name': imageNameRef,
             'category': imageCategory,
             'uploadDate': new Date().toDateString()
         }
     };
-    uploadBytes(imageRef, imageUpload, customMeta)
+     uploadBytes(imageRef, imageUpload, customMeta)
+    
+    console.log('Image uploaded')
 };
 
 //Documents from Firestore

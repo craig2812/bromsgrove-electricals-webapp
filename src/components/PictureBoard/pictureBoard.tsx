@@ -1,11 +1,5 @@
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
-import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
-import { useMediaQuery } from '@mui/material';
 import { ElectricalServicesRounded, Home } from '@mui/icons-material';
 import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import DeckIcon from '@mui/icons-material/Deck';
@@ -13,9 +7,9 @@ import WaterDamageIcon from '@mui/icons-material/WaterDamage';
 import HomeIcon from '@mui/icons-material/Home';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import { pictureDatabase } from './pictureDatabase';
-import { ImageFetchObject } from '../../firebase/firebaseController';
-
-
+import { fetchImages, fetchReviews, ImageFetchObject } from '../../firebase/firebaseController';
+import './gallery.css';
+import { useEffect, useRef, useState } from 'react';
 
 function chooseIcon(redirect?: string) {
   switch (redirect) {
@@ -36,85 +30,77 @@ function chooseIcon(redirect?: string) {
   }
 }
 
-interface PictureProps {
-  width?: number;
-  heading?: string;
-  images?: ImageFetchObject[];
+interface GaleryProps {
+  folderPath?: string
 }
 
-// const pictures = pictureDatabase
+export const Gallery: React.FC<GaleryProps> = ({ folderPath = 'images/' }) => {
+  const imageArray: ImageFetchObject[] = []
+  const [images, setImages] = useState(imageArray);
 
+  const getImagesGallery = async () => {
+    const imageArray = fetchImages(folderPath).then((imageArray) => setImages(imageArray)).then(() => console.log('state images', images));
+  }
+  React.useEffect(() => {
+    getImagesGallery()
+  }, [])
 
-export const PictureBoard: React.FunctionComponent<PictureProps> = ({ width, heading, images}) => {
-  const isMobileMatch = useMediaQuery("(max-width:600px)");
+  const scrollRef = useRef<HTMLDivElement>(null);
 
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft -= scrollRef.current.offsetWidth;
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft += scrollRef.current.offsetWidth;
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+
+      scrollRef.current &&
+        scrollRef.current.scrollLeft + scrollRef.current.offsetWidth >=
+        scrollRef.current.scrollWidth
+
+    };
+
+    if (scrollRef.current) {
+      scrollRef.current.addEventListener('scroll', handleScroll);
+    }
+
+    return () => {
+      if (scrollRef.current) {
+        scrollRef.current.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
 
   return (
-    <ImageList sx={{ height: !isMobileMatch ? 450 : null, minWidth: !isMobileMatch ? 500 : null, maxWidth: width }}>
-      <ImageListItem key="Subheader" cols={isMobileMatch ? 2 : 3}>
-        <ListSubheader component="div" sx={{
-          fontWeight: 900,
-          textAlign: 'center',
-          fontSize: 'large'
-        }}>{heading}</ListSubheader>
-      </ImageListItem>
-        {images?.map((item) => (
-        <ImageListItem key={item.name+Math.floor(Math.random() * 100000)}>
+    <div>
+      <div className="gallery-container" ref={scrollRef}>
+        {images.map((image, index) => (
+          <div key={index} className="image-container">
+            <img src={image.url} alt={image.name} className="image" />
+            <div className="category-footer">
+              <a href={`/${image.category}`}>{image.category}</a>
+            </div>
+          </div>
 
-          <img
-            src={`${item.url}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.url}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.name}
-            loading="lazy"
-          />
-          <a href={item.category && `/${item.category}`}>
-            <ImageListItemBar
-              title={item.name}
-              actionIcon={
-                <IconButton
-                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  aria-label={`info about ${item.name}`}
-                >
-                  {chooseIcon(item.category)}              
-                  </IconButton>
-              }
-            /></a>
-        </ImageListItem>
-      ))}
-    </ImageList>
+        ))}
+      </div>
+      <div className="scroll-buttons">
+        <button className="scroll-button" onClick={scrollLeft}>
+          &lt;
+        </button>
+        <button className="scroll-button" onClick={scrollRight}>
+          &gt;
+        </button>
+      </div>
+    </div>
   );
-}
+};
 
-const itemData = [
-  {
-    img: 'https://images.unsplash.com/photo-1526131424827-a96615888a26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG9zZSUyMHRhcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
-    title: 'Outdoor Tap',
-    // featured: true,
-    redirect: 'water'
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Domestic',
-    redirect: 'domestic'
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Commercial',
-    redirect: 'commercial'
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Charging',
-    redirect: 'charging'
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Garden Work',
-    redirect: 'garden'
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Testing',
-    redirect: 'testing',
-  }
-];
