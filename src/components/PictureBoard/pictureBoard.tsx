@@ -1,8 +1,9 @@
 import * as React from 'react';
 import InfoIcon from '@mui/icons-material/Info';
-import { ElectricalServicesRounded, Home } from '@mui/icons-material';
+import { ArrowCircleRightOutlined, ElectricalServicesRounded, Home } from '@mui/icons-material';
 import ElectricCarIcon from '@mui/icons-material/ElectricCar';
 import DeckIcon from '@mui/icons-material/Deck';
+import ArrowCircleLeftOutlined from '@mui/icons-material/ArrowCircleLeftOutlined'
 import WaterDamageIcon from '@mui/icons-material/WaterDamage';
 import HomeIcon from '@mui/icons-material/Home';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
@@ -39,7 +40,7 @@ export const Gallery: React.FC<GaleryProps> = ({ folderPath = 'images/' }) => {
   const [images, setImages] = useState(imageArray);
 
   const getImagesGallery = async () => {
-    const imageArray = fetchImages(folderPath).then((imageArray) => setImages(imageArray)).then(() => console.log('state images', images));
+    fetchImages(folderPath).then((imageArray) => setImages(imageArray));
   }
   React.useEffect(() => {
     getImagesGallery()
@@ -86,7 +87,8 @@ export const Gallery: React.FC<GaleryProps> = ({ folderPath = 'images/' }) => {
           <div key={index} className="image-container">
             <img src={image.url} alt={image.name} className="image" />
             <div className="category-footer">
-              <a href={`/${image.category}`}>{image.category}</a>
+              {chooseIcon(image.category)}
+              <a href={`/${image.category}`}>{image.category?.toUpperCase()}</a>
             </div>
           </div>
 
@@ -94,10 +96,10 @@ export const Gallery: React.FC<GaleryProps> = ({ folderPath = 'images/' }) => {
       </div>
       <div className="scroll-buttons">
         <button className="scroll-button" onClick={scrollLeft}>
-          &lt;
+          <ArrowCircleLeftOutlined/>
         </button>
         <button className="scroll-button" onClick={scrollRight}>
-          &gt;
+        <ArrowCircleRightOutlined/>
         </button>
       </div>
     </div>

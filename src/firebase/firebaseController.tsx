@@ -42,7 +42,7 @@ export const fetchImages = async (imageFolder: string) => {
 };
 
 
-export const addImage = (imageCategory = 'misc', imageName: string, imageUpload: File) => {
+export const addImage = async (imageCategory = 'misc', imageName: string, imageUpload: File) => {
     const imageNameRef = imageName.toString().length > 0 ? imageName : imageUpload?.name
     const imageFullName = imageNameRef + '_' + imageSerial
     const imageRef = ref(storage, `images/${imageFullName}`)
@@ -54,10 +54,8 @@ export const addImage = (imageCategory = 'misc', imageName: string, imageUpload:
             'uploadDate': new Date().toDateString()
         }
     };
-     uploadBytes(imageRef, imageUpload, customMeta)
-    
-    console.log('Image uploaded')
-};
+     await uploadBytes(imageRef, imageUpload, customMeta)
+    };
 
 //Documents from Firestore
 type Review = {

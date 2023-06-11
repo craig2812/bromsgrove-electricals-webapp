@@ -21,10 +21,18 @@ const Admin = () => {
     const [imageCategory, setImageCategory] = useState('misc')
     const [imageName, setImageName] = useState('')
 
-//todo Image upload is a bit finacky
-    const handleImageUpload = () => {
+    const handleImageUpload = async (event: any) => {
+        event.preventDefault()
+        const imageNameUpdated = imageName.length == 0 ? imageUpload.name : imageName
+
         addImage(imageCategory, imageName, imageUpload)
-        alert('Image has been successfully uploaded: ' + imageUpload.name)
+        .then(() => {alert('Image has been successfully uploaded: ' + imageNameUpdated)})
+        .then(() => {console.log('image uploaded')})
+        .catch((e) => {
+            alert('Image upload has failed for: ' + imageNameUpdated)
+            console.log('ErrorUpload:', e)
+        })
+        .finally(() => event.target.reset())
     }
 
     return (
@@ -33,7 +41,7 @@ const Admin = () => {
             <form onSubmit={handleImageUpload} className='form-container'>
                 <input type="file" onChange={(event) => { if (event.target.files) { setImageUpload(event?.target.files[0]) } }}></input>
                 Image Type
-                <select defaultValue={'DEFAULT'} name="bad_day" onChange={(event) => { setImageCategory(event.target.value) }}>
+                <select defaultValue={'DEFAULT'} name="imageCategories" onChange={(event) => { setImageCategory(event.target.value) }}>
                     <option value="DEFAULT" disabled>Choose an image type ...</option>
                     <option value="domestic">Domestic</option>
                     <option value="garden" >Garden</option>
@@ -44,11 +52,13 @@ const Admin = () => {
                     <option value="misc">Misc</option>
                 </select>
                 Image Name (optional)
-                <input type="text" onChange={(event) => { setImageName(event.target.value) }}></input>
-                <button type="submit">Add Picture</button>
-            
+                <input type="text" onChange={(event) => { setImageName(event.target.value) }}></input>    
+                <button type='submit'>Add Picture</button>
+        
             </form>
+            <div style={{paddingTop:'10px'}}>
             <Gallery></Gallery>
+            </div>
         </div>
     );
 };
