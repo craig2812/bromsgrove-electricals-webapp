@@ -58,23 +58,25 @@ export const addImage = async (imageCategory = 'misc', imageName: string, imageU
     };
 
 //Documents from Firestore
-type Review = {
+export type Review = {
     id: number;
     author: string;
     message: string;
     service: string;
     isShown: boolean;
     rating: number;
-    date: Date;
+    date: string;
 };
 
 export async function addReview(reviewObj: Review) {
-    await setDoc(doc(firestore, "pictures", reviewObj.id.toString()), {
+    await setDoc(doc(firestore, "reviews", reviewObj.id.toString()), {
         id: reviewObj.id,    
-        url: reviewObj.author,
-        description: reviewObj.message,
-        type: reviewObj.service,
-        isShown: reviewObj.isShown
+        author: reviewObj.author,
+        message: reviewObj.message,
+        services: reviewObj.service,
+        isShown: reviewObj.isShown,
+        rating: reviewObj.rating,
+        date: reviewObj.date
     });
     console.log("Document written with ID:", reviewObj.id);
 }

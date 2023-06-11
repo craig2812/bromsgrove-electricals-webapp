@@ -4,6 +4,9 @@ import { addImage, fetchImages, fetchReviews, ImageFetchObject } from '../../fir
 import '../page.css';
 import 'firebase/firestore'
 import { Gallery } from '../../components/PictureBoard/pictureBoard';
+import { Reviews } from '@mui/icons-material';
+import ReviewForm from '../../components/Reviews/reviews';
+import {ReviewDisplay} from '../../components/Reviews/reviewsDisplay';
 
 
 const Admin = () => {
@@ -57,6 +60,9 @@ const Admin = () => {
         
             </form>
             <div style={{paddingTop:'10px'}}>
+                <Reviews></Reviews>
+                <ReviewForm></ReviewForm>
+                <ReviewDisplay></ReviewDisplay>
             <Gallery></Gallery>
             </div>
         </div>

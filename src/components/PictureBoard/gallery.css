@@ -9,6 +9,7 @@
   .image-container {
     flex: 0 0 calc(50% - 5px); /* Adjust the width of each image container as desired */
     position: relative;
+    /* max-height: 250px; */
   }
   
   .image {

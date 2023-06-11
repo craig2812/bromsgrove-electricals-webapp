@@ -6,31 +6,19 @@
   - [ ] v1.4.1 - Add firebase storage to add and read images 
     - [x] Clean up code 
     - [x] Clean up firebase storage paths into one file for pics and reviews
-    Have images fetch working correctly now - but image upload not working fluidy, seems to intermittently crash
-    - [ ] Add images and Reviews
-    - [ ] Render chosen images on certain pages 
-    - [ ] Render reviews on chosen page
-
-
-## Remaining Work 
-- [ ] v1.5 - Copy and content 
-  - v1.5.1 - Lanuguage Packs 
-  - v1.5.2 - Add Content 
-- [ ] v1.6 - Complete and Clean up Firebase linkup
-  - Collections:  Pictures / reviews / content / contact form
-    - each to have add, get, update endpoint added
+    - [x] Add images and Reviews controller features
+    - [x] Render chosen images on certain pages 
+- [x] v1.5 - Admin page to add images and reviews
+- [x] v1.6 - Add review siaply box
+- [ ] v1.7 - Updated all Content 
+- [ ] v1.8 - Add and Render Reviews
 
 
 
 
 ### Stretch Goals 
-- [ ] v2.0 - Add admin page to:
-  - v2.1.0 - Add ability to add images to firebase via url 
-    - look into file storage
-  - v2.2.0 - Get Images from firebase and populate certain pages 
-  - v2.3.0 - Add ability to change content  
-  - v2.4.0 - Add password protection to admin page 
-  - v2.5.0 - Add reviews component 
+- v2.0 - Add password protection to admin page 
+
 ---
 
 ###  NOTES 
