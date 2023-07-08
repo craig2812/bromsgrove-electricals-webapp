@@ -10,14 +10,14 @@
     - [x] Render chosen images on certain pages 
 - [x] v1.5 - Admin page to add images and reviews
 - [x] v1.6 - Add review siaply box
-- [ ] v1.7 - Updated all Content 
-- [ ] v1.8 - Add and Render Reviews
+- [x] v1.7 - Add and Render Reviews
 
 
 
 
 ### Stretch Goals 
 - v2.0 - Add password protection to admin page 
+- v2.1 - Update all content
 
 ---
 

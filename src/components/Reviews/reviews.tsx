@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { addReview, Review } from '../../firebase/firebaseController';
+import '../../pages/page.css';
 
 
 
@@ -28,7 +29,7 @@ const ReviewForm: React.FC = () => {
     };
 
     // Call the onSubmit function with the review object
-    addReview(review)
+    addReview(review).then(() => window.location.reload())
 
     // Reset the form fields
     setAuthor('');
@@ -39,7 +40,8 @@ const ReviewForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="page-container">
+    <form onSubmit={handleSubmit} className='form-container'>
       <div>
         <label htmlFor="author">Author:</label>
         <input
@@ -92,6 +94,7 @@ const ReviewForm: React.FC = () => {
       </div>
       <button type="submit">Submit</button>
     </form>
+    </div>
   );
 };
 

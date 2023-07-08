@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, Firestore } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDocs, Firestore, deleteDoc } from 'firebase/firestore';
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, listAll, getDownloadURL, updateMetadata, getMetadata, getStorage } from 'firebase/storage'
 import { firebaseConfig, storage, firestore} from './config'
@@ -73,12 +73,17 @@ export async function addReview(reviewObj: Review) {
         id: reviewObj.id,    
         author: reviewObj.author,
         message: reviewObj.message,
-        services: reviewObj.service,
+        service: reviewObj.service,
         isShown: reviewObj.isShown,
         rating: reviewObj.rating,
         date: reviewObj.date
     });
     console.log("Document written with ID:", reviewObj.id);
+}
+
+export async function deleteReview(reviewObj: Review) {
+    await deleteDoc(doc(firestore, "reviews", reviewObj.id.toString()));
+    console.log("Document Deleted with ID:", reviewObj.id);
 }
 
 export async function fetchReviews(): Promise<Review[]> {

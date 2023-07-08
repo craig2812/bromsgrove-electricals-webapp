@@ -41,7 +41,10 @@ const Admin = () => {
     return (
         <div className="page-container">
             <h1>Admin Page</h1>
-            <form onSubmit={handleImageUpload} className='form-container'>
+            <div style={{display: 'flex', gap: '20px', flexDirection: 'column'}}>
+            <div>
+                <h3>Image Upload</h3>
+                <form onSubmit={handleImageUpload} className='form-container'>
                 <input type="file" onChange={(event) => { if (event.target.files) { setImageUpload(event?.target.files[0]) } }}></input>
                 Image Type
                 <select defaultValue={'DEFAULT'} name="imageCategories" onChange={(event) => { setImageCategory(event.target.value) }}>
@@ -57,13 +60,21 @@ const Admin = () => {
                 Image Name (optional)
                 <input type="text" onChange={(event) => { setImageName(event.target.value) }}></input>    
                 <button type='submit'>Add Picture</button>
-        
+                <Gallery></Gallery>
+
             </form>
             <div style={{paddingTop:'10px'}}>
-                <Reviews></Reviews>
-                <ReviewForm></ReviewForm>
+                {/* <Reviews></Reviews> */}
+   
+    
+            </div>
+
+            </div>
+            <div>
+                <h3>Review Upload</h3>
+            <ReviewForm></ReviewForm>
                 <ReviewDisplay></ReviewDisplay>
-            <Gallery></Gallery>
+            </div>
             </div>
         </div>
     );

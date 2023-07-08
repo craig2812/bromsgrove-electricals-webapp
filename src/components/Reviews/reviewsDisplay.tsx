@@ -1,6 +1,6 @@
 import { Reviews } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react';
-import { fetchReviews, Review } from '../../firebase/firebaseController';
+import { deleteReview, fetchReviews, Review } from '../../firebase/firebaseController';
 
 const reviewArray: Review[] = [{
     author: '',
@@ -16,7 +16,7 @@ const reviewArray: Review[] = [{
 
 
 
-export const ReviewDisplay: React.FC = () => {
+export const ReviewDisplay: React.FC = (isAdmin) => {
     const [reviews, setReviews] = useState(reviewArray);
 
 
@@ -33,6 +33,10 @@ export const ReviewDisplay: React.FC = () => {
     const handlePreviousReviews = () => {
       setStartIndex((prevIndex) => prevIndex - 2);
     };
+
+    const handleDeleteReview = (review: Review) => {
+deleteReview(review).then(() => window.location.reload())
+    }
   
     const visibleReviews = reviews.slice(startIndex, startIndex + 2);
   
@@ -46,6 +50,7 @@ export const ReviewDisplay: React.FC = () => {
               <p>Service: {review.service}</p>
               <p>Rating: {review.rating}</p>
               <p>Date: {review.date.toString()}</p>
+              <button hidden={!window.location.href.endsWith('admin')} onClick={() => (handleDeleteReview(review))}>Delete</button>
             </div>
           ))}
         </div>
